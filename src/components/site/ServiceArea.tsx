@@ -166,7 +166,7 @@ export function ServiceArea() {
                 x={pin.x}
                 y={pin.y}
                 label={pin.name}
-                {...(pin.primary ? { primary: true } : {})}
+                primary={pin.primary || false}
                 active={hoveredArea === pin.name}
                 onMouseEnter={() => setHoveredArea(pin.name)}
                 onMouseLeave={() => setHoveredArea(null)}
