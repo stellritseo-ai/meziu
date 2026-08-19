@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useLocation } from "@tanstack/react-router";
+import { useLocation, Link } from "@tanstack/react-router";
 import {
   Menu,
   Phone,
@@ -21,6 +21,8 @@ import {
   Building2,
   Sparkles,
   ChevronRight,
+  Star,
+  Hammer,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { BUSINESS, NAV, SERVICES_SUBMENU } from "@/lib/site";
