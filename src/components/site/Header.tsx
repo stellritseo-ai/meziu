@@ -89,7 +89,7 @@ export function Header() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     // Use IntersectionObserver for active section tracking on home page
     const observer = new IntersectionObserver(
       (entries) => {
@@ -293,7 +293,7 @@ export function Header() {
                       onMouseLeave={handleServicesLeave}
                     >
                       <div className="rounded-3xl bg-white border border-slate-200/90 shadow-2xl p-6 overflow-hidden">
-                        
+
                         {/* Dropdown Header */}
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3.5 mb-4">
                           <div className="inline-flex items-center gap-2">
