@@ -79,7 +79,7 @@ export function FloatingCta() {
 
     // Dynamic Bot Reply
     setTimeout(() => {
-      let botResponse = "Thank you for reaching out! Master contractor Luan Meziu will review your message shortly. For immediate assistance, call us at (973) 928-6500.";
+      let botResponse = `Thank you for reaching out! Master contractor Luan Meziu will review your message shortly. For immediate assistance, call us at ${BUSINESS.phone}.`;
 
       const lower = text.toLowerCase();
       if (lower.includes("masonry") || lower.includes("concrete") || lower.includes("paver")) {
@@ -87,7 +87,7 @@ export function FloatingCta() {
       } else if (lower.includes("kitchen") || lower.includes("bath") || lower.includes("remodel")) {
         botResponse = "Our team transforms kitchens and bathrooms with master craftsmanship. Share your zip code or timeline, and we can discuss your vision!";
       } else if (lower.includes("call") || lower.includes("phone") || lower.includes("luan")) {
-        botResponse = `You can reach Luan Meziu directly at ${BUSINESS.phone} / (973) 928-6500, or leave your phone number here and we'll call you back right away.`;
+        botResponse = `You can reach Luan Meziu directly at ${BUSINESS.phone}, or leave your phone number here and we'll call you back right away.`;
       } else if (lower.includes("zip") || lower.includes("area") || lower.includes("location")) {
         botResponse = "We proudly serve Garfield, Clifton, Passaic, Paterson, Hackensack, Elmwood Park, Lodi, Saddle Brook, Paramus, Wayne & surrounding towns within 40 miles!";
       }

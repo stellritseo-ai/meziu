@@ -135,14 +135,20 @@ export function Portfolio() {
             </p>
           </Reveal>
 
-          {/* Header Action Button */}
-          <Reveal delay={100} className="shrink-0 self-start lg:self-auto">
+          {/* Header Action Buttons */}
+          <Reveal delay={100} className="shrink-0 self-start lg:self-auto flex flex-wrap items-center gap-3">
             <a
-              href="#contact"
-              className="inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background text-xs font-bold uppercase tracking-widest rounded-full px-7 py-4 transition-all duration-300 shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background text-xs font-bold uppercase tracking-widest rounded-full px-6 py-3.5 transition-all duration-300 shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
-              <span>Get Free Estimate</span>
+              <span>Full Portfolio</span>
               <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="/free-estimate"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold uppercase tracking-widest rounded-full px-6 py-3.5 transition-all duration-300 shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            >
+              <span>Get Estimate</span>
             </a>
           </Reveal>
         </div>

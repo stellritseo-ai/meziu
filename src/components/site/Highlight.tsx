@@ -64,7 +64,7 @@ export function Highlight() {
           </ul>
 
           <a
-            href="#contact"
+            href="/free-estimate"
             className="group mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
           >
             Request Your Estimate

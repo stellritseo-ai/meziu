@@ -10,12 +10,42 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FreeEstimateRouteImport } from './routes/free-estimate'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ServicesBathroomRouteImport } from './routes/services.bathroom'
+import { Route as ServicesCommercialConstructionRouteImport } from './routes/services.commercial-construction'
+import { Route as ServicesConcreteRouteImport } from './routes/services.concrete'
+import { Route as ServicesGeneralContractingRouteImport } from './routes/services.general-contracting'
+import { Route as ServicesHomeAdditionsRouteImport } from './routes/services.home-additions'
+import { Route as ServicesHomeRemodelingRouteImport } from './routes/services.home-remodeling'
+import { Route as ServicesKitchenRouteImport } from './routes/services.kitchen'
+import { Route as ServicesMasonryRouteImport } from './routes/services.masonry'
+import { Route as ServicesPaversRouteImport } from './routes/services.pavers'
+import { Route as ServicesStoneworkRouteImport } from './routes/services.stonework'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FreeEstimateRoute = FreeEstimateRouteImport.update({
+  id: '/free-estimate',
+  path: '/free-estimate',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -23,40 +53,217 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesBathroomRoute = ServicesBathroomRouteImport.update({
+  id: '/services/bathroom',
+  path: '/services/bathroom',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCommercialConstructionRoute =
+  ServicesCommercialConstructionRouteImport.update({
+    id: '/services/commercial-construction',
+    path: '/services/commercial-construction',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesConcreteRoute = ServicesConcreteRouteImport.update({
+  id: '/services/concrete',
+  path: '/services/concrete',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesGeneralContractingRoute =
+  ServicesGeneralContractingRouteImport.update({
+    id: '/services/general-contracting',
+    path: '/services/general-contracting',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesHomeAdditionsRoute = ServicesHomeAdditionsRouteImport.update({
+  id: '/services/home-additions',
+  path: '/services/home-additions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesHomeRemodelingRoute = ServicesHomeRemodelingRouteImport.update({
+  id: '/services/home-remodeling',
+  path: '/services/home-remodeling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesKitchenRoute = ServicesKitchenRouteImport.update({
+  id: '/services/kitchen',
+  path: '/services/kitchen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesMasonryRoute = ServicesMasonryRouteImport.update({
+  id: '/services/masonry',
+  path: '/services/masonry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesPaversRoute = ServicesPaversRouteImport.update({
+  id: '/services/pavers',
+  path: '/services/pavers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesStoneworkRoute = ServicesStoneworkRouteImport.update({
+  id: '/services/stonework',
+  path: '/services/stonework',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/free-estimate': typeof FreeEstimateRoute
   '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/reviews': typeof ReviewsRoute
   '/terms': typeof TermsRoute
+  '/services/bathroom': typeof ServicesBathroomRoute
+  '/services/commercial-construction': typeof ServicesCommercialConstructionRoute
+  '/services/concrete': typeof ServicesConcreteRoute
+  '/services/general-contracting': typeof ServicesGeneralContractingRoute
+  '/services/home-additions': typeof ServicesHomeAdditionsRoute
+  '/services/home-remodeling': typeof ServicesHomeRemodelingRoute
+  '/services/kitchen': typeof ServicesKitchenRoute
+  '/services/masonry': typeof ServicesMasonryRoute
+  '/services/pavers': typeof ServicesPaversRoute
+  '/services/stonework': typeof ServicesStoneworkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/free-estimate': typeof FreeEstimateRoute
   '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/reviews': typeof ReviewsRoute
   '/terms': typeof TermsRoute
+  '/services/bathroom': typeof ServicesBathroomRoute
+  '/services/commercial-construction': typeof ServicesCommercialConstructionRoute
+  '/services/concrete': typeof ServicesConcreteRoute
+  '/services/general-contracting': typeof ServicesGeneralContractingRoute
+  '/services/home-additions': typeof ServicesHomeAdditionsRoute
+  '/services/home-remodeling': typeof ServicesHomeRemodelingRoute
+  '/services/kitchen': typeof ServicesKitchenRoute
+  '/services/masonry': typeof ServicesMasonryRoute
+  '/services/pavers': typeof ServicesPaversRoute
+  '/services/stonework': typeof ServicesStoneworkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/free-estimate': typeof FreeEstimateRoute
   '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/reviews': typeof ReviewsRoute
   '/terms': typeof TermsRoute
+  '/services/bathroom': typeof ServicesBathroomRoute
+  '/services/commercial-construction': typeof ServicesCommercialConstructionRoute
+  '/services/concrete': typeof ServicesConcreteRoute
+  '/services/general-contracting': typeof ServicesGeneralContractingRoute
+  '/services/home-additions': typeof ServicesHomeAdditionsRoute
+  '/services/home-remodeling': typeof ServicesHomeRemodelingRoute
+  '/services/kitchen': typeof ServicesKitchenRoute
+  '/services/masonry': typeof ServicesMasonryRoute
+  '/services/pavers': typeof ServicesPaversRoute
+  '/services/stonework': typeof ServicesStoneworkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/terms'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/free-estimate'
+    | '/privacy'
+    | '/projects'
+    | '/reviews'
+    | '/terms'
+    | '/services/bathroom'
+    | '/services/commercial-construction'
+    | '/services/concrete'
+    | '/services/general-contracting'
+    | '/services/home-additions'
+    | '/services/home-remodeling'
+    | '/services/kitchen'
+    | '/services/masonry'
+    | '/services/pavers'
+    | '/services/stonework'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/terms'
-  id: '__root__' | '/' | '/privacy' | '/terms'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/free-estimate'
+    | '/privacy'
+    | '/projects'
+    | '/reviews'
+    | '/terms'
+    | '/services/bathroom'
+    | '/services/commercial-construction'
+    | '/services/concrete'
+    | '/services/general-contracting'
+    | '/services/home-additions'
+    | '/services/home-remodeling'
+    | '/services/kitchen'
+    | '/services/masonry'
+    | '/services/pavers'
+    | '/services/stonework'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/free-estimate'
+    | '/privacy'
+    | '/projects'
+    | '/reviews'
+    | '/terms'
+    | '/services/bathroom'
+    | '/services/commercial-construction'
+    | '/services/concrete'
+    | '/services/general-contracting'
+    | '/services/home-additions'
+    | '/services/home-remodeling'
+    | '/services/kitchen'
+    | '/services/masonry'
+    | '/services/pavers'
+    | '/services/stonework'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  FreeEstimateRoute: typeof FreeEstimateRoute
   PrivacyRoute: typeof PrivacyRoute
+  ProjectsRoute: typeof ProjectsRoute
+  ReviewsRoute: typeof ReviewsRoute
   TermsRoute: typeof TermsRoute
+  ServicesBathroomRoute: typeof ServicesBathroomRoute
+  ServicesCommercialConstructionRoute: typeof ServicesCommercialConstructionRoute
+  ServicesConcreteRoute: typeof ServicesConcreteRoute
+  ServicesGeneralContractingRoute: typeof ServicesGeneralContractingRoute
+  ServicesHomeAdditionsRoute: typeof ServicesHomeAdditionsRoute
+  ServicesHomeRemodelingRoute: typeof ServicesHomeRemodelingRoute
+  ServicesKitchenRoute: typeof ServicesKitchenRoute
+  ServicesMasonryRoute: typeof ServicesMasonryRoute
+  ServicesPaversRoute: typeof ServicesPaversRoute
+  ServicesStoneworkRoute: typeof ServicesStoneworkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,11 +275,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/free-estimate': {
+      id: '/free-estimate'
+      path: '/free-estimate'
+      fullPath: '/free-estimate'
+      preLoaderRoute: typeof FreeEstimateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -82,13 +324,98 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/bathroom': {
+      id: '/services/bathroom'
+      path: '/services/bathroom'
+      fullPath: '/services/bathroom'
+      preLoaderRoute: typeof ServicesBathroomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/commercial-construction': {
+      id: '/services/commercial-construction'
+      path: '/services/commercial-construction'
+      fullPath: '/services/commercial-construction'
+      preLoaderRoute: typeof ServicesCommercialConstructionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concrete': {
+      id: '/services/concrete'
+      path: '/services/concrete'
+      fullPath: '/services/concrete'
+      preLoaderRoute: typeof ServicesConcreteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/general-contracting': {
+      id: '/services/general-contracting'
+      path: '/services/general-contracting'
+      fullPath: '/services/general-contracting'
+      preLoaderRoute: typeof ServicesGeneralContractingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/home-additions': {
+      id: '/services/home-additions'
+      path: '/services/home-additions'
+      fullPath: '/services/home-additions'
+      preLoaderRoute: typeof ServicesHomeAdditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/home-remodeling': {
+      id: '/services/home-remodeling'
+      path: '/services/home-remodeling'
+      fullPath: '/services/home-remodeling'
+      preLoaderRoute: typeof ServicesHomeRemodelingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/kitchen': {
+      id: '/services/kitchen'
+      path: '/services/kitchen'
+      fullPath: '/services/kitchen'
+      preLoaderRoute: typeof ServicesKitchenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/masonry': {
+      id: '/services/masonry'
+      path: '/services/masonry'
+      fullPath: '/services/masonry'
+      preLoaderRoute: typeof ServicesMasonryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/pavers': {
+      id: '/services/pavers'
+      path: '/services/pavers'
+      fullPath: '/services/pavers'
+      preLoaderRoute: typeof ServicesPaversRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/stonework': {
+      id: '/services/stonework'
+      path: '/services/stonework'
+      fullPath: '/services/stonework'
+      preLoaderRoute: typeof ServicesStoneworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  FreeEstimateRoute: FreeEstimateRoute,
   PrivacyRoute: PrivacyRoute,
+  ProjectsRoute: ProjectsRoute,
+  ReviewsRoute: ReviewsRoute,
   TermsRoute: TermsRoute,
+  ServicesBathroomRoute: ServicesBathroomRoute,
+  ServicesCommercialConstructionRoute: ServicesCommercialConstructionRoute,
+  ServicesConcreteRoute: ServicesConcreteRoute,
+  ServicesGeneralContractingRoute: ServicesGeneralContractingRoute,
+  ServicesHomeAdditionsRoute: ServicesHomeAdditionsRoute,
+  ServicesHomeRemodelingRoute: ServicesHomeRemodelingRoute,
+  ServicesKitchenRoute: ServicesKitchenRoute,
+  ServicesMasonryRoute: ServicesMasonryRoute,
+  ServicesPaversRoute: ServicesPaversRoute,
+  ServicesStoneworkRoute: ServicesStoneworkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

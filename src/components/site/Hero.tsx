@@ -53,7 +53,7 @@ export function Hero() {
           {/* Action Buttons */}
           <div className="pt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="#contact"
+              href="/free-estimate"
               className="flex h-11 sm:h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#E56E1A] via-[#ED741D] to-[#E56E1A] px-6 text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-white shadow-md shadow-orange-500/25 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/35 hover:-translate-y-0.5 active:translate-y-0 group"
             >
               <span>Get a Free Estimate</span>

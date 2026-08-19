@@ -117,7 +117,7 @@ export function Contact() {
               <div className="space-y-5 pt-2">
                 {/* Phone */}
                 <a
-                  href="tel:+19739286500"
+                  href={BUSINESS.phoneHref}
                   className="flex items-start gap-3.5 group/item cursor-pointer"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/30 text-primary flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform duration-300">

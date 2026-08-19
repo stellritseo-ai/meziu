@@ -11,14 +11,77 @@ export const BUSINESS = {
 } as const;
 
 export const NAV = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Reviews", href: "#reviews" },
-  // { label: "Service Areas", href: "#areas" },
-  { label: "Free Estimate", href: "#contact" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/#services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Reviews", href: "/reviews" },
+  // { label: "Service Areas", href: "/#areas" },
+  { label: "Free Estimate", href: "/free-estimate" },
+  { label: "Contact", href: "/contact" },
+] as const;
+
+export const SERVICES_SUBMENU = [
+  {
+    title: "Masonry Services",
+    desc: "Brickwork, stone veneer, chimneys, and structural masonry",
+    href: "/services/masonry",
+    icon: "Layers",
+  },
+  {
+    title: "Concrete Contractor",
+    desc: "Engineered slabs, reinforced steps, footings, and stamped concrete",
+    href: "/services/concrete",
+    icon: "Grid",
+  },
+  {
+    title: "Kitchen Remodeling",
+    desc: "Custom cabinetry, quartz countertops, and full kitchen design",
+    href: "/services/kitchen",
+    icon: "Utensils",
+  },
+  {
+    title: "Bathroom Remodeling",
+    desc: "Walk-in glass showers, luxury tile work, and modern fixtures",
+    href: "/services/bathroom",
+    icon: "Bath",
+  },
+  {
+    title: "Pavers & Driveways",
+    desc: "Interlocking paver driveways, custom patios, and walkways",
+    href: "/services/pavers",
+    icon: "Compass",
+  },
+  {
+    title: "Home Remodeling & Renovation",
+    desc: "Full interior gut remodels and whole-home transformations",
+    href: "/services/home-remodeling",
+    icon: "Home",
+  },
+  {
+    title: "Stone Work & Walls",
+    desc: "Natural stone retaining walls, erosion control, and facades",
+    href: "/services/stonework",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Home Additions",
+    desc: "Two-story additions, master suites, and room expansions",
+    href: "/services/home-additions",
+    icon: "Maximize2",
+  },
+  {
+    title: "General Contracting & Handyman",
+    desc: "Turnkey project management, framing, drywall, and repairs",
+    href: "/services/general-contracting",
+    icon: "Wrench",
+  },
+  {
+    title: "Commercial Construction",
+    desc: "Storefront build-outs, commercial masonry, and tenant fit-outs",
+    href: "/services/commercial-construction",
+    icon: "Building2",
+  },
 ] as const;
 
 export const FAQS = [

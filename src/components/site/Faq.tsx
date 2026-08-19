@@ -39,12 +39,12 @@ const FAQ_LIST: FaqItem[] = [
   },
   {
     q: "Do you offer emergency masonry or structural repair services?",
-    a: "Yes. Emergency structural, masonry, or weather-damage repair services are available during regular operational hours. Call (973) 928-6500 or (201) 844-2427 for immediate dispatch.",
+    a: "Yes. Emergency structural, masonry, or weather-damage repair services are available during regular operational hours. Call (201) 844-2427 for immediate dispatch.",
     cat: "Emergency",
   },
   {
     q: "How can I request a free on-site estimate?",
-    a: "Requesting a free estimate is fast and easy! Call us directly at (973) 928-6500 / (201) 844-2427, email meziullc@gmail.com, or fill out our online contact form to schedule an on-site consultation.",
+    a: "Requesting a free estimate is fast and easy! Call us directly at (201) 844-2427, email meziullc@gmail.com, or fill out our online contact form to schedule an on-site consultation.",
     cat: "Estimates",
   },
 ];

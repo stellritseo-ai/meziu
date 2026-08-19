@@ -30,6 +30,7 @@ type ServiceItem = {
   copy: string;
   image: string;
   alt: string;
+  href: string;
 };
 
 const SERVICES: ServiceItem[] = [
@@ -39,6 +40,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Precision brickwork, stone veneer, chimney repairs, and structural masonry engineered for New Jersey weather.",
     image: masonry,
     alt: "Mason laying brick with a trowel",
+    href: "/services/masonry",
   },
   {
     icon: Grid,
@@ -46,6 +48,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Engineered slabs, footings, reinforced steps, and custom stamped concrete finished to perfection.",
     image: concrete,
     alt: "Crew finishing a freshly poured concrete slab",
+    href: "/services/concrete",
   },
   {
     icon: Utensils,
@@ -53,6 +56,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Full kitchen transformations from layout design to custom cabinetry and premium quartz counter installation.",
     image: kitchen,
     alt: "Newly remodeled white kitchen with quartz island",
+    href: "/services/kitchen",
   },
   {
     icon: Bath,
@@ -60,6 +64,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Custom tile work, frameless glass showers, vanity integration, and luxury modern plumbing fixtures.",
     image: bathroom,
     alt: "Renovated bathroom with glass walk-in shower",
+    href: "/services/bathroom",
   },
   {
     icon: Compass,
@@ -67,6 +72,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Interlocking paver driveways, custom patios, and elegant walkways with engineered base preparation.",
     image: pavers,
     alt: "Newly installed paver driveway in front of a home",
+    href: "/services/pavers",
   },
   {
     icon: Home,
@@ -74,6 +80,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Comprehensive whole-home transformations managed seamlessly from demolition to final interior trim.",
     image: renovation,
     alt: "Home interior renovation in progress with new framing",
+    href: "/services/home-remodeling",
   },
   {
     icon: ShieldCheck,
@@ -81,6 +88,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Heavy-duty stone retaining walls, decorative stone veneer, stone steps, and custom hardscapes.",
     image: stonework,
     alt: "Natural stone retaining wall with stone steps",
+    href: "/services/stonework",
   },
   {
     icon: Maximize2,
@@ -88,6 +96,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Expanding your living space with seamless structural additions, master suites, and room extensions.",
     image: addition,
     alt: "Home addition under construction with new framing",
+    href: "/services/home-additions",
   },
   {
     icon: Wrench,
@@ -95,6 +104,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Complete project management, punch-lists, framing, and specialty trade coordination under one roof.",
     image: interior,
     alt: "Bright renovated living room with new oak flooring",
+    href: "/services/general-contracting",
   },
   {
     icon: Building2,
@@ -102,6 +112,7 @@ const SERVICES: ServiceItem[] = [
     copy: "Storefront build-outs, commercial masonry, exterior facades, and tenant improvements for NJ businesses.",
     image: commercial,
     alt: "Renovated commercial storefront exterior with stone facade",
+    href: "/services/commercial-construction",
   },
 ];
 
@@ -144,7 +155,7 @@ function CardContent({ s }: { s: ServiceItem }) {
                 {s.copy}
               </p>
               <a
-                href="#contact"
+                href={s.href}
                 className="mt-3.5 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-[11px] font-extrabold uppercase tracking-wider text-primary-foreground shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105 active:scale-95 cursor-pointer w-fit"
               >
                 <span>Read More</span>
@@ -210,7 +221,7 @@ export function Services() {
             {/* Action Button */}
             <div className="mt-7">
               <a
-                href="#contact"
+                href="/free-estimate"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-7 py-3.5 text-[13px] font-black uppercase tracking-wider shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <span>Get Free Estimate</span>
@@ -224,9 +235,14 @@ export function Services() {
             {topItems.map((s) => (
               <Reveal
                 key={s.title}
-                className="group relative rounded-2xl overflow-hidden bg-slate-950 h-[210px] sm:h-[290px] lg:h-[360px] xl:h-[400px] cursor-pointer shadow-[0_4px_24px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] transition-shadow duration-500"
+                className="h-[210px] sm:h-[290px] lg:h-[360px] xl:h-[400px]"
               >
-                <CardContent s={s} />
+                <a
+                  href={s.href}
+                  className="group block relative w-full h-full rounded-2xl overflow-hidden bg-slate-950 cursor-pointer shadow-[0_4px_24px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] transition-shadow duration-500"
+                >
+                  <CardContent s={s} />
+                </a>
               </Reveal>
             ))}
           </div>
@@ -255,9 +271,12 @@ export function Services() {
                   key={`${s.title}-${idx}`}
                   className="w-[240px] sm:w-[260px] lg:w-[280px] shrink-0"
                 >
-                  <div className="group relative rounded-xl overflow-hidden bg-slate-950 h-[180px] sm:h-[220px] lg:h-[260px] cursor-pointer shadow-md hover:shadow-[0_12px_32px_rgba(0,0,0,0.2)] transition-shadow duration-500">
+                  <a
+                    href={s.href}
+                    className="group block relative rounded-xl overflow-hidden bg-slate-950 h-[180px] sm:h-[220px] lg:h-[260px] cursor-pointer shadow-md hover:shadow-[0_12px_32px_rgba(0,0,0,0.2)] transition-shadow duration-500"
+                  >
                     <CardContent s={s} />
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>

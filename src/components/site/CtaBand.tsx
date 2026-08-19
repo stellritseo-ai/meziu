@@ -52,7 +52,7 @@ export function CtaBand() {
           {/* Dual Action Buttons */}
           <div className="mt-8 flex flex-col justify-center items-center gap-4 sm:flex-row">
             <a
-              href="#contact"
+              href="/free-estimate"
               className="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-primary via-amber-500 to-primary text-primary-foreground px-8 py-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer w-full sm:w-auto"
             >
               <span>Get Free On-Site Estimate</span>

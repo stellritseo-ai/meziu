@@ -107,7 +107,7 @@ export function About() {
           {/* Action Buttons */}
           <div className="pt-4 flex flex-wrap items-center gap-4">
             <a
-              href="#contact"
+              href="/free-estimate"
               className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-7 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
               <span>Get Free Estimate</span>
@@ -115,10 +115,10 @@ export function About() {
             </a>
 
             <a
-              href="#services"
+              href="/about"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-border/80 bg-card px-7 text-sm font-semibold text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-accent hover:-translate-y-0.5 active:translate-y-0 shadow-sm cursor-pointer"
             >
-              <span>Our Services</span>
+              <span>About Our Company</span>
             </a>
           </div>
         </Reveal>

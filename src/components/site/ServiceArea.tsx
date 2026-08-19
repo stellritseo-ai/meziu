@@ -184,7 +184,7 @@ export function ServiceArea() {
                     Meziu Construction LLC
                   </h4>
                   <p className="text-[11px] text-slate-300 font-medium mt-0.5">
-                    Garfield, NJ 07026 • Direct Dispatch: (973) 928-6500
+                    Garfield, NJ 07026 • Direct Dispatch: (201) 844-2427
                   </p>
                 </div>
               </div>

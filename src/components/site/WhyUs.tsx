@@ -131,13 +131,13 @@ export function WhyUs() {
               {/* CTAs */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <a
-                  href="#services"
+                  href="/#services"
                   className="inline-flex items-center justify-center gap-2 bg-foreground hover:bg-foreground/90 text-background text-[11px] md:text-xs font-bold uppercase tracking-widest rounded-full px-7 py-3.5 transition-all duration-300 shadow-md hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
                 >
                   <span>Explore Services</span>
                 </a>
                 <a
-                  href="#contact"
+                  href="/free-estimate"
                   className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary via-amber-500 to-primary hover:opacity-95 text-primary-foreground text-[11px] md:text-xs font-bold uppercase tracking-widest rounded-full px-7 py-3.5 transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
                 >
                   <span>Get Free Estimate</span>

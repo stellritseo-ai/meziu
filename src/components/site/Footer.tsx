@@ -42,14 +42,16 @@ const SOCIALS = [
 ];
 
 const SERVICES_LIST = [
-  { name: "Masonry & Stone Work", href: "#services" },
-  { name: "Concrete Flatwork & Driveways", href: "#services" },
-  { name: "Kitchen Remodeling", href: "#services" },
-  { name: "Bathroom Remodeling", href: "#services" },
-  { name: "Full Home Remodeling", href: "#services" },
-  { name: "Pavers & Patios", href: "#services" },
-  { name: "Retaining Walls", href: "#services" },
-  { name: "Structural Home Additions", href: "#services" },
+  { name: "Masonry Services", href: "/services/masonry" },
+  { name: "Concrete Contractor", href: "/services/concrete" },
+  { name: "Kitchen Remodeling", href: "/services/kitchen" },
+  { name: "Bathroom Remodeling", href: "/services/bathroom" },
+  { name: "Pavers & Driveways", href: "/services/pavers" },
+  { name: "Home Remodeling & Renovation", href: "/services/home-remodeling" },
+  { name: "Stone Work & Walls", href: "/services/stonework" },
+  { name: "Home Additions", href: "/services/home-additions" },
+  { name: "General Contracting & Handyman", href: "/services/general-contracting" },
+  { name: "Commercial Construction", href: "/services/commercial-construction" },
 ];
 
 export function Footer() {
