@@ -418,46 +418,82 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu (Light Luxury Theme) */}
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-slate-950/95 backdrop-blur-2xl text-white lg:hidden animate-in fade-in zoom-in-95 duration-300 origin-top">
+        <div className="fixed inset-0 z-50 flex flex-col bg-white/98 backdrop-blur-2xl text-slate-950 lg:hidden animate-in fade-in zoom-in-95 duration-300 origin-top">
           
           {/* Header Row */}
-          <div className="container-x flex h-20 items-center justify-between border-b border-white/10 shrink-0">
-            <img
-              src={logo}
-              alt={BUSINESS.name}
-              className="h-12 w-auto object-contain"
-            />
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              aria-label="Close menu"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 transition-all active:scale-95 cursor-pointer"
-            >
-              <X className="h-5 w-5" aria-hidden="true" />
-            </button>
+          <div className="container-x flex h-20 items-center justify-between border-b border-slate-200/80 bg-white/90 shrink-0">
+            <Link to="/" onClick={() => setOpen(false)} className="inline-block">
+              <img
+                src={logo}
+                alt={BUSINESS.name}
+                className="h-11 w-auto object-contain"
+              />
+            </Link>
+
+            <div className="flex items-center gap-2">
+              {/* Language Switcher */}
+              <button
+                type="button"
+                onClick={() => setLang(lang === "EN" ? "ES" : "EN")}
+                className="inline-flex items-center gap-1 text-[11px] font-black uppercase text-[#E56E1A] bg-orange-100/80 border border-orange-200 px-3 py-1.5 rounded-full cursor-pointer"
+              >
+                <span>{lang === "EN" ? "🇺🇸 EN" : "🇪🇸 ES"}</span>
+              </button>
+
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all active:scale-95 cursor-pointer"
+              >
+                <X className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+
+          {/* Quick Trust Bar */}
+          <div className="bg-slate-50 border-b border-slate-200/70 px-4 py-2 flex items-center justify-between text-[11px] font-extrabold text-slate-700 shrink-0">
+            <div className="flex items-center gap-1.5 text-amber-600">
+              <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+              <span>5.0 ★ Google Verified</span>
+            </div>
+            <div className="flex items-center gap-1 text-emerald-700">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Licensed &amp; Insured</span>
+            </div>
+            <span className="text-[#E56E1A] font-bold">Hablamos Español</span>
           </div>
           
-          {/* Navigation Links with Scroll */}
+          {/* Navigation Links with Smooth Scroll */}
           <nav
-            className="container-x flex-1 overflow-y-auto py-6 space-y-1"
+            className="container-x flex-1 overflow-y-auto py-4 space-y-1.5"
             aria-label="Mobile Navigation"
           >
-            {NAV.map((item, i) => {
+            {NAV.map((item) => {
               const isServices = item.label.toLowerCase() === "services";
+              const isActive =
+                currentPath === item.href ||
+                (isServices && currentPath.startsWith("/services"));
 
               if (isServices) {
                 return (
-                  <div key={item.href} className="border-b border-white/5 pb-2">
+                  <div key={item.href} className="border-b border-slate-100 pb-2">
                     <button
                       type="button"
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className="w-full flex items-center justify-between py-3.5 text-left font-display text-[20px] font-extrabold uppercase tracking-wide text-slate-100 hover:text-[#E56E1A] transition-colors cursor-pointer"
+                      className={cn(
+                        "w-full flex items-center justify-between py-3 px-3 rounded-2xl text-left font-display text-[17px] font-extrabold uppercase tracking-wide transition-colors cursor-pointer",
+                        isActive
+                          ? "bg-orange-50 text-[#E56E1A]"
+                          : "text-slate-900 hover:bg-slate-50"
+                      )}
                     >
                       <span className="flex items-center gap-2">
                         <span>{item.label}</span>
-                        <span className="text-[10px] font-black uppercase text-[#E56E1A] bg-orange-500/20 px-2 py-0.5 rounded-full">
+                        <span className="text-[10px] font-black uppercase text-[#B85008] bg-orange-100 border border-orange-200 px-2 py-0.5 rounded-full">
                           10 Services
                         </span>
                       </span>
@@ -469,29 +505,40 @@ export function Header() {
                       />
                     </button>
 
-                    {/* Expandable Sub-Services Accordion */}
+                    {/* Expandable 10 Sub-Services Accordion */}
                     {mobileServicesOpen && (
-                      <div className="pl-2 pr-1 py-2 space-y-1.5 bg-white/5 rounded-2xl border border-white/10 animate-in fade-in slide-in-from-top-2 duration-200 my-2">
+                      <div className="pl-1 pr-1 py-2 space-y-1.5 bg-slate-50/90 rounded-2xl border border-slate-200/80 animate-in fade-in slide-in-from-top-2 duration-200 my-2">
                         {SERVICES_SUBMENU.map((sub) => {
                           const IconComp = SUB_SERVICE_ICONS[sub.icon] || Hammer;
+                          const isSubActive = currentPath === sub.href;
+
                           return (
                             <a
                               key={sub.title}
                               href={sub.href}
                               onClick={() => setOpen(false)}
-                              className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors"
+                              className={cn(
+                                "flex items-center gap-3 p-2.5 rounded-xl transition-all",
+                                isSubActive
+                                  ? "bg-orange-100/90 border border-orange-300 shadow-sm"
+                                  : "hover:bg-white border border-transparent"
+                              )}
                             >
-                              <div className="w-8 h-8 rounded-lg bg-[#E56E1A]/20 text-[#E56E1A] flex items-center justify-center shrink-0">
+                              <div className="w-8 h-8 rounded-lg bg-orange-100 text-[#E56E1A] flex items-center justify-center shrink-0 shadow-inner">
                                 <IconComp className="w-4 h-4" />
                               </div>
                               <div className="min-w-0">
-                                <div className="text-xs font-bold text-white truncate">
+                                <div className={cn(
+                                  "text-xs font-bold truncate",
+                                  isSubActive ? "text-[#E56E1A] font-black" : "text-slate-900"
+                                )}>
                                   {sub.title}
                                 </div>
-                                <div className="text-[10px] text-slate-400 line-clamp-1">
+                                <div className="text-[10px] text-slate-500 line-clamp-1 font-medium">
                                   {sub.desc}
                                 </div>
                               </div>
+                              <ChevronRight className="w-3.5 h-3.5 text-slate-400 ml-auto shrink-0" />
                             </a>
                           );
                         })}
@@ -506,12 +553,17 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="group flex items-center justify-between border-b border-white/5 py-3.5"
+                  className={cn(
+                    "group flex items-center justify-between border-b border-slate-100 py-3 px-3 rounded-2xl transition-all",
+                    isActive
+                      ? "bg-orange-50 text-[#E56E1A] font-black"
+                      : "text-slate-900 hover:bg-slate-50"
+                  )}
                 >
-                  <span className="font-display text-[20px] font-extrabold uppercase tracking-wide text-slate-100 group-hover:text-[#E56E1A] transition-colors">
+                  <span className="font-display text-[17px] font-extrabold uppercase tracking-wide">
                     {item.label}
                   </span>
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 group-hover:bg-[#E56E1A]/20 transition-colors">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 group-hover:bg-orange-100 transition-colors">
                     <ArrowRight className="h-3.5 w-3.5 text-slate-500 group-hover:text-[#E56E1A] transition-colors group-hover:translate-x-0.5" />
                   </div>
                 </a>
@@ -519,38 +571,40 @@ export function Header() {
             })}
           </nav>
           
-          {/* Bottom Action Area */}
-          <div className="container-x space-y-3 pb-8 pt-4 border-t border-white/10 bg-slate-950 shrink-0">
+          {/* Bottom Action & Dispatch Area */}
+          <div className="container-x space-y-3 pb-8 pt-4 border-t border-slate-200/80 bg-white shrink-0 shadow-2xl">
             
             {/* Quick Contact Info */}
-            <div className="flex items-center justify-center gap-6 mb-4">
-              <div className="flex flex-col items-center gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Us</span>
-                <a href={`mailto:${BUSINESS.email}`} className="text-xs font-semibold text-white hover:text-[#E56E1A] transition-colors">{BUSINESS.email}</a>
+            <div className="grid grid-cols-2 gap-3 py-2 px-3 bg-slate-50 rounded-2xl border border-slate-200/70 text-center">
+              <div>
+                <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block">Email Us</span>
+                <a href={`mailto:${BUSINESS.email}`} className="text-xs font-bold text-slate-800 hover:text-[#E56E1A] transition-colors truncate block">{BUSINESS.email}</a>
               </div>
-              <div className="w-px h-8 bg-white/10"></div>
-              <div className="flex flex-col items-center gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Call Us</span>
-                <a href={BUSINESS.phoneHref} className="text-xs font-semibold text-white hover:text-[#E56E1A] transition-colors">{BUSINESS.phone}</a>
+              <div className="border-l border-slate-200 pl-2">
+                <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block">Direct Call</span>
+                <a href={BUSINESS.phoneHref} className="text-xs font-extrabold text-[#E56E1A] hover:underline block">{BUSINESS.phone}</a>
               </div>
             </div>
 
-            {/* CTAs */}
-            <a
-              href="/free-estimate"
-              onClick={() => setOpen(false)}
-              className="flex h-12 items-center justify-center gap-2 rounded-xl bg-white font-black text-xs uppercase tracking-wider text-slate-950 shadow-xl transition-all active:scale-98"
-            >
-              <span>Request a Free Estimate</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href={BUSINESS.phoneHref}
-              className="flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E56E1A] via-amber-500 to-[#E56E1A] font-black text-xs uppercase tracking-wider text-white shadow-lg shadow-orange-500/25 transition-all active:scale-98"
-            >
-              <Phone className="h-4 w-4 fill-current" />
-              <span>Call {BUSINESS.phone}</span>
-            </a>
+            {/* Dual CTAs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <a
+                href="/free-estimate"
+                onClick={() => setOpen(false)}
+                className="flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E56E1A] via-amber-500 to-[#E56E1A] font-black text-xs uppercase tracking-wider text-white shadow-lg shadow-orange-500/25 transition-all active:scale-98"
+              >
+                <span>Request Free Estimate</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
+
+              <a
+                href={BUSINESS.phoneHref}
+                className="flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 font-black text-xs uppercase tracking-wider text-white shadow-md transition-all active:scale-98"
+              >
+                <Phone className="h-4 w-4 fill-current text-amber-400" />
+                <span>Call {BUSINESS.phone}</span>
+              </a>
+            </div>
           </div>
         </div>
       )}
