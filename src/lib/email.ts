@@ -54,7 +54,7 @@ export const sendZohoEmail = createServerFn({ method: "POST" })
           </table>
         </div>
         <div style="background: #f8fafc; padding: 14px 24px; border-top: 1px solid #e2e8f0; text-align: center; font-size: 11px; color: #64748b;">
-          Submitted via MEZIU Construction Website · Notification sent directly to eva@stellrit.com
+          Submitted via MEZIU Construction Website · Instant Notification
         </div>
       </div>
     `;

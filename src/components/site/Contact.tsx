@@ -212,7 +212,7 @@ export function Contact() {
                   Estimate Request Received!
                 </h3>
                 <p className="text-muted-foreground text-sm font-medium max-w-md leading-relaxed">
-                  Thank you for reaching out to MEZIU CONSTRUCTION LLC. Your request was delivered directly to our team via Zoho Mail. Master contractor Luan Meziu will contact you shortly to confirm your on-site estimate appointment.
+                  Thank you for reaching out to MEZIU CONSTRUCTION LLC. Master contractor Luan Meziu and our project crew will contact you shortly to confirm your on-site estimate appointment.
                 </p>
                 <button
                   type="button"
@@ -343,12 +343,12 @@ export function Contact() {
                   disabled={submitting}
                   className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary via-amber-500 to-primary hover:opacity-95 text-primary-foreground text-xs sm:text-sm font-black uppercase tracking-wider rounded-xl py-4 transition-all duration-300 shadow-lg shadow-primary/25 hover:scale-[1.01] active:scale-[0.99] cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <span>{submitting ? "Sending to eva@stellrit.com..." : "Send Free Estimate Request"}</span>
+                  <span>{submitting ? "Sending Request..." : "Send Free Estimate Request"}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
                 <p className="text-center text-[10px] text-muted-foreground font-medium pt-1">
-                  100% Privacy Guaranteed. Your details are securely delivered directly to eva@stellrit.com via Zoho Mail.
+                  100% Privacy Guaranteed. Your details are used strictly to provide your on-site estimate.
                 </p>
               </form>
             )}

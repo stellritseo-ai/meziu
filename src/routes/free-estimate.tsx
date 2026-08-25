@@ -615,7 +615,7 @@ function FreeEstimatePage() {
                     Estimate Request Received!
                   </h3>
                   <p className="text-xs sm:text-sm text-emerald-800 max-w-lg mx-auto leading-relaxed">
-                    Thank you! Your project details have been sent directly to eva@stellrit.com via Zoho Mail. Master contractor Luan Meziu or our project crew will contact you within 24 hours to confirm your on-site assessment appointment.
+                    Thank you! Luan Meziu or a member of our team will review your project details and contact you within 24 hours to confirm your on-site assessment appointment.
                   </p>
                   <div className="pt-2">
                     <button
@@ -894,11 +894,11 @@ function FreeEstimatePage() {
                       className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{submitting ? "Sending to eva@stellrit.com..." : "Send Free Estimate Request"}</span>
+                      <span>{submitting ? "Sending Request..." : "Send Free Estimate Request"}</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed font-medium">
-                      Your privacy is important to us. Your information is securely sent directly to eva@stellrit.com via Zoho Mail.
+                      Your privacy is important to us. Your information will only be used to provide your free estimate and will never be shared with third parties.
                     </p>
                   </div>
 

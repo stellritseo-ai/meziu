@@ -1054,7 +1054,7 @@ function ReviewsPage() {
                   </div>
                   <h3 className="text-xl font-bold text-emerald-950">Thank You for Your Review!</h3>
                   <p className="text-xs sm:text-sm text-emerald-800 max-w-md mx-auto">
-                    Your feedback has been delivered directly to eva@stellrit.com via Zoho Mail and will be reviewed and published to our client showcase. We appreciate your trust in Luan Meziu and MEZIU CONSTRUCTION LLC!
+                    Your feedback has been received and will be reviewed and published to our client showcase. We appreciate your trust in Luan Meziu and MEZIU CONSTRUCTION LLC!
                   </p>
                   <button
                     type="button"
@@ -1220,7 +1220,7 @@ function ReviewsPage() {
                       className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{submitting ? "Sending to eva@stellrit.com..." : "Submit Review"}</span>
+                      <span>{submitting ? "Submitting Review..." : "Submit Review"}</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed">

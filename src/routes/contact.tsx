@@ -539,7 +539,7 @@ function ContactPage() {
                   </div>
                   <h3 className="text-2xl font-black text-emerald-950">Message Sent Successfully!</h3>
                   <p className="text-xs sm:text-sm text-emerald-800 max-w-lg mx-auto leading-relaxed">
-                    Thank you for reaching out to MEZIU CONSTRUCTION LLC. Your message was delivered directly to eva@stellrit.com via Zoho Mail and we will respond within 24 hours.
+                    Thank you for reaching out to MEZIU CONSTRUCTION LLC. We have received your message and will respond within 24 hours.
                   </p>
                   <div className="pt-2">
                     <button
@@ -809,11 +809,11 @@ function ContactPage() {
                       className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{submitting ? "Sending to eva@stellrit.com..." : "Send Message"}</span>
+                      <span>{submitting ? "Sending Message..." : "Send Message"}</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed font-medium">
-                      Your privacy is important to us. Your information is securely sent directly to eva@stellrit.com via Zoho Mail.
+                      Your privacy is important to us. Your information will only be used to respond to your inquiry and will never be shared with third parties.
                     </p>
                   </div>
 
