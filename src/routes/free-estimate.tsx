@@ -32,7 +32,8 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { BUSINESS, WEB3FORMS_CONFIG } from "@/lib/site";
+import { BUSINESS } from "@/lib/site";
+import { sendZohoEmail } from "@/lib/email";
 
 // Existing authentic image assets
 import aboutImg from "@/assets/about.jpg";
@@ -278,7 +279,57 @@ function FreeEstimatePage() {
   const [timeline, setTimeline] = useState<string>("As soon as possible");
   const [budget, setBudget] = useState<string>("$10,000 - $25,000");
   const [hearAbout, setHearAbout] = useState<string>("Google Search");
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setErrorMessage(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const firstName = String(data.get("firstName") || "");
+    const lastName = String(data.get("lastName") || "");
+    const email = String(data.get("email") || "");
+    const phone = String(data.get("phone") || "");
+    const streetAddress = String(data.get("streetAddress") || "");
+    const city = String(data.get("city") || "");
+    const scope = String(data.get("scope") || "");
+
+    try {
+      await sendZohoEmail({
+        data: {
+          subject: `New Free Estimate Request (${selectedService}) - ${firstName} ${lastName}`,
+          fromName: `${firstName} ${lastName}`.trim() || "Website Visitor",
+          replyTo: email || undefined,
+          fields: {
+            "First Name": firstName,
+            "Last Name": lastName,
+            "Phone Number": phone,
+            "Email Address": email,
+            "Street Address": streetAddress || "Not provided",
+            "City/Town": city || "Cliffwood area",
+            "Service Needed": selectedService,
+            "Property Type": propertyType,
+            "Target Timeline": timeline,
+            "Estimated Budget": budget,
+            "Referral Source": hearAbout,
+            "Project Scope / Description": scope,
+            "Submitted At": new Date().toLocaleString("en-US", { timeZone: "America/New_York" }) + " EST",
+          },
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Zoho Email Error:", err);
+      setErrorMessage("Unable to send estimate request automatically. Please call us directly at (201) 844-2427.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div className="bg-white text-slate-900 min-h-screen flex flex-col selection:bg-[#E56E1A] selection:text-white">
@@ -555,19 +606,35 @@ function FreeEstimatePage() {
                 </p>
               </div>
 
-                <form
-                  action="https://api.web3forms.com/submit"
-                  method="POST"
-                  encType="multipart/form-data"
-                  className="space-y-8"
-                >
-                  {/* Web3Forms Configuration */}
-                  <input type="hidden" name="access_key" value={WEB3FORMS_CONFIG.accessKey} />
-                  <input type="hidden" name="subject" value="New Free Estimate Request - MEZIU Construction" />
-                  <input type="hidden" name="from_name" value="MEZIU Construction Website" />
-                  <input type="hidden" name="to" value={WEB3FORMS_CONFIG.recipientEmail} />
-                  <input type="hidden" name="selectedService" value={selectedService} />
-                  <input type="hidden" name="propertyType" value={propertyType} />
+              {submitted ? (
+                <div className="p-8 sm:p-10 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-4 animate-in fade-in">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-10 h-10" />
+                  </div>
+                  <h3 className="text-2xl font-black text-emerald-950">
+                    Estimate Request Received!
+                  </h3>
+                  <p className="text-xs sm:text-sm text-emerald-800 max-w-lg mx-auto leading-relaxed">
+                    Thank you! Your project details have been sent directly to eva@stellrit.com via Zoho Mail. Master contractor Luan Meziu or our project crew will contact you within 24 hours to confirm your on-site assessment appointment.
+                  </p>
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 underline cursor-pointer"
+                    >
+                      Submit another estimate request
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {errorMessage && (
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
                   
                   {/* Section A: Personal Information */}
                   <div className="space-y-4">
@@ -823,19 +890,20 @@ function FreeEstimatePage() {
                   <div className="space-y-3 pt-2">
                     <button
                       type="submit"
-                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={submitting}
+                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Send Free Estimate Request</span>
+                      <span>{submitting ? "Sending to eva@stellrit.com..." : "Send Free Estimate Request"}</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed font-medium">
-                      Your privacy is important to us. Your information will only be used to provide
-                      your free estimate and will never be shared with third parties.
+                      Your privacy is important to us. Your information is securely sent directly to eva@stellrit.com via Zoho Mail.
                     </p>
                   </div>
 
                 </form>
+              )}
 
             </div>
           </div>

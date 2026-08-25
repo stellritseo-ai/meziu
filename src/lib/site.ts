@@ -10,9 +10,8 @@ export const BUSINESS = {
   radius: "40 miles",
 } as const;
 
-export const WEB3FORMS_CONFIG = {
-  accessKey: "03e561a6-90be-4938-b247-d6ca0456f0d7",
-  recipientEmail: "eva@stellrit.com",
+export const ZOHO_EMAIL_CONFIG = {
+  email: "eva@stellrit.com",
 } as const;
 
 export const NAV = [
