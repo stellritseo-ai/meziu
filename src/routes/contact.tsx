@@ -37,7 +37,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { BUSINESS, FORM_SUBMIT_URL } from "@/lib/site";
+import { BUSINESS, WEB3FORMS_CONFIG } from "@/lib/site";
 
 // Existing authentic image assets
 import aboutImg from "@/assets/about.jpg";
@@ -484,15 +484,16 @@ function ContactPage() {
               </div>
 
                 <form
-                  action={FORM_SUBMIT_URL}
+                  action="https://api.web3forms.com/submit"
                   method="POST"
                   encType="multipart/form-data"
                   className="space-y-8"
                 >
-                  {/* FormSubmit.co Configuration */}
-                  <input type="hidden" name="_subject" value="New Contact Us Message - MEZIU Construction" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_captcha" value="false" />
+                  {/* Web3Forms Configuration */}
+                  <input type="hidden" name="access_key" value={WEB3FORMS_CONFIG.accessKey} />
+                  <input type="hidden" name="subject" value="New Contact Us Message - MEZIU Construction" />
+                  <input type="hidden" name="from_name" value="MEZIU Construction Website" />
+                  <input type="hidden" name="to" value={WEB3FORMS_CONFIG.recipientEmail} />
                   <input type="hidden" name="inquiryType" value={inquiryType} />
                   
                   {/* Section A: Personal Information */}

@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { BUSINESS, FORM_SUBMIT_URL } from "@/lib/site";
+import { BUSINESS, WEB3FORMS_CONFIG } from "@/lib/site";
 
 import masonryImg from "@/assets/masonry.jpg";
 import paversImg from "@/assets/pavers.jpg";
@@ -1002,14 +1002,15 @@ function ReviewsPage() {
               </div>
 
                 <form
-                  action={FORM_SUBMIT_URL}
+                  action="https://api.web3forms.com/submit"
                   method="POST"
                   className="space-y-6"
                 >
-                  {/* FormSubmit.co Configuration */}
-                  <input type="hidden" name="_subject" value="New Client Review - MEZIU Construction" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_captcha" value="false" />
+                  {/* Web3Forms Configuration */}
+                  <input type="hidden" name="access_key" value={WEB3FORMS_CONFIG.accessKey} />
+                  <input type="hidden" name="subject" value="New Client Review - MEZIU Construction" />
+                  <input type="hidden" name="from_name" value="MEZIU Construction Website" />
+                  <input type="hidden" name="to" value={WEB3FORMS_CONFIG.recipientEmail} />
                   <input type="hidden" name="rating" value={`${formRating} / 5 Stars`} />
                   <input type="hidden" name="wouldRecommend" value={recommend ? "Yes" : "No"} />
                   {/* Rating Selector */}

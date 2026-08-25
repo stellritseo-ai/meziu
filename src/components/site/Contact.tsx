@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { BUSINESS, FORM_SUBMIT_URL } from "@/lib/site";
+import { BUSINESS, WEB3FORMS_CONFIG } from "@/lib/site";
 import { Reveal } from "./Reveal";
 
 export function Contact() {
@@ -151,11 +151,12 @@ export function Contact() {
 
           {/* Right Column (7 Cols): Quote Request Form */}
           <Reveal delay={120} className="lg:col-span-7 bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-center">
-            <form action={FORM_SUBMIT_URL} method="POST" className="space-y-5 text-left">
-              {/* FormSubmit.co Configuration */}
-              <input type="hidden" name="_subject" value="New Free Estimate Request - MEZIU Construction Website" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-5 text-left">
+              {/* Web3Forms Configuration */}
+              <input type="hidden" name="access_key" value={WEB3FORMS_CONFIG.accessKey} />
+              <input type="hidden" name="subject" value="New Free Estimate Request - MEZIU Construction Website" />
+              <input type="hidden" name="from_name" value="MEZIU Construction Website" />
+              <input type="hidden" name="to" value={WEB3FORMS_CONFIG.recipientEmail} />
 
               <div className="flex items-center justify-between pb-2 border-b border-border/60">
                 <h3 className="font-extrabold text-foreground text-lg sm:text-xl">
