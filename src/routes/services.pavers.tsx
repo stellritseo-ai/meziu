@@ -74,7 +74,7 @@ const PAVERS_SERVICES_DATA = [
       { name: "Permeable Driveway Systems", detail: "Eco-friendly open-graded aggregates preventing stormwater pooling." },
     ],
     image: paverDrivewayImg,
-    alt: "Stunning interlocking paver driveway with herringbone pattern in Garfield, NJ",
+    alt: "Stunning interlocking paver driveway with herringbone pattern in Cliffwood, NJ",
   },
   {
     id: "paver-patios",
@@ -125,7 +125,7 @@ const PAVERS_SERVICES_DATA = [
       { name: "Solid Stone & Paver Caps", detail: "Adhesive-bonded coping caps with clean overhangs and chiseled edges." },
     ],
     image: stoneworkImg,
-    alt: "Engineered natural stone retaining wall and paver terrace in Garfield, NJ",
+    alt: "Engineered natural stone retaining wall and paver terrace in Cliffwood, NJ",
   },
   {
     id: "paver-pool-decks",
@@ -273,7 +273,7 @@ const WHY_CHOOSE_PAVERS = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -334,7 +334,7 @@ const PAVER_PROCESS = [
 const PAVER_PORTFOLIO = [
   {
     title: "Natural Stone Retaining Wall & Paver Driveway",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Paver Driveway",
     desc: "Interlocking paver driveway with custom natural stone retaining wall and contrasting charcoal soldier border.",
     image: paverDrivewayImg,
@@ -378,7 +378,7 @@ const PAVER_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -414,7 +414,7 @@ const PAVER_FAQS = [
   },
   {
     q: "Do you provide free estimates for pavers and driveways?",
-    a: "Absolutely! We offer 100% free, no-obligation on-site estimates throughout Garfield, NJ, and our entire 40-mile service radius. Luan Meziu will assess your property, take measurements, show material catalogs, and provide a clear written estimate.",
+    a: "Absolutely! We offer 100% free, no-obligation on-site estimates throughout Cliffwood, NJ, and our entire 40-mile service radius. Luan Meziu will assess your property, take measurements, show material catalogs, and provide a clear written estimate.",
   },
   {
     q: "How long do paver driveways and patios last?",
@@ -551,15 +551,15 @@ function PaversDrivewaysPage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 group">
                   <img
                     src={paversHeroImg}
-                    alt="Custom interlocking paver driveway and natural stone walls in Garfield, NJ"
-                    className="w-full h-[420px] sm:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Custom interlocking paver driveway and natural stone walls in Cliffwood, NJ"
+                    className="w-full h-[400px] sm:h-[460px] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                   
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Hardscape Masters</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Hardscape Masters</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -626,7 +626,7 @@ function PaversDrivewaysPage() {
                     Your outdoor spaces should be as beautiful and functional as the inside of your home. At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we specialize in creating stunning paver installations that enhance curb appeal, increase property value, and provide years of durability.
                   </p>
                   <p>
-                    As a family-owned business with over 15 years of hands-on experience, we understand that proper installation is the key to long-lasting paver surfaces. From deep base preparation and proper drainage to precise pattern layout and professional finishing, our experienced team ensures every project is built to last. We serve both residential and commercial clients across Garfield, NJ, and a 40-mile radius.
+                    As a family-owned business with over 15 years of hands-on experience, we understand that proper installation is the key to long-lasting paver surfaces. From deep base preparation and proper drainage to precise pattern layout and professional finishing, our experienced team ensures every project is built to last. We serve both residential and commercial clients across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction.
@@ -684,7 +684,7 @@ function PaversDrivewaysPage() {
                 Our Pavers &amp; Driveways Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Paver Solutions for Every Need across Garfield &amp; Northern New Jersey
+                Comprehensive Paver Solutions for Every Need across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -896,7 +896,7 @@ function PaversDrivewaysPage() {
                   Our Paver Portfolio
                 </h2>
                 <p className="text-base text-slate-600">
-                  Real Projects. Real Quality. Browse examples of our recent paver and driveway projects across Garfield, NJ, and Northern New Jersey.
+                  Real Projects. Real Quality. Browse examples of our recent paver and driveway projects across Cliffwood, NJ, and New Jersey.
                 </p>
               </div>
 
@@ -964,7 +964,7 @@ function PaversDrivewaysPage() {
                 Serving Northern New Jersey
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert paver and driveway services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert paver and driveway services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1080,7 +1080,7 @@ function PaversDrivewaysPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured paver contractor serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first base layer to the final sealing."
+                "{BUSINESS.name} is a family-owned, licensed, and insured paver contractor serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first base layer to the final sealing."
               </p>
             </div>
 

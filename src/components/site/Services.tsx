@@ -205,7 +205,7 @@ export function Services() {
 
             {/* Subtitle */}
             <p className="text-muted-foreground text-sm md:text-[15px] leading-[28px] font-medium max-w-[95%]">
-              One accountable master team. Every project — from precision masonry foundations and concrete flatwork to full home renovations and commercial build-outs across Garfield, NJ.
+              One accountable master team. Every project — from precision masonry foundations and concrete flatwork to full home renovations and commercial build-outs across Cliffwood, NJ.
             </p>
 
             {/* Trust Row */}

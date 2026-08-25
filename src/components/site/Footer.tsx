@@ -82,7 +82,7 @@ export function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed max-w-sm">
-              Built with experience. Driven by quality. Family-owned master contractor serving Garfield, NJ and surrounding Northern New Jersey communities since 2009.
+              Built with experience. Driven by quality. Family-owned master contractor serving Cliffwood, NJ and surrounding New Jersey communities since 2009.
             </p>
 
             {/* Social Links Row */}
@@ -221,7 +221,7 @@ export function Footer() {
                 <div>
                   <span className="text-[10px] text-slate-400 block uppercase font-bold">Headquarters</span>
                   <span className="font-bold text-xs text-white">
-                    Garfield, NJ 07026
+                    Cliffwood, NJ
                   </span>
                 </div>
               </div>

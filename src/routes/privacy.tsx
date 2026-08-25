@@ -12,7 +12,7 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:title", content: "Privacy Policy | MEZIU CONSTRUCTION LLC" },
       {
         property: "og:description",
-        content: "Privacy practices for MEZIU CONSTRUCTION LLC in Garfield, New Jersey.",
+        content: "Privacy practices for MEZIU CONSTRUCTION LLC in Cliffwood, New Jersey.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/privacy" },

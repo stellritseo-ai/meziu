@@ -46,7 +46,7 @@ export function CtaBand() {
 
           {/* Subtitle */}
           <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed font-medium max-w-2xl mx-auto">
-            Get a fast, 100% free, no-obligation estimate for your masonry, concrete, kitchen, bathroom, or whole-home remodeling project across Garfield and Northern New Jersey.
+            Get a fast, 100% free, no-obligation estimate for your masonry, concrete, kitchen, bathroom, or whole-home remodeling project across Cliffwood and New Jersey.
           </p>
 
           {/* Dual Action Buttons */}

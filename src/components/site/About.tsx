@@ -98,7 +98,7 @@ export function About() {
                 <MapPin className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-lg font-bold leading-none text-foreground">Garfield, NJ</div>
+                <div className="text-lg font-bold leading-none text-foreground">Cliffwood, NJ</div>
                 <div className="text-xs text-muted-foreground mt-0.5">40 Mile Service Radius</div>
               </div>
             </div>
@@ -226,7 +226,7 @@ export function About() {
                   <Clock className="h-2.5 w-2.5" />
                   <span>Est. 2009</span>
                 </div>
-                <p className="text-[11px] font-semibold text-white line-clamp-1">Garfield & NJ</p>
+                <p className="text-[11px] font-semibold text-white line-clamp-1">Cliffwood & NJ</p>
               </div>
             </div>
           </div>

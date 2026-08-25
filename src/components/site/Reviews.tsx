@@ -304,8 +304,8 @@ export function Reviews() {
           </h2>
 
           <p className="mt-3 text-muted-foreground text-sm sm:text-base leading-relaxed font-medium">
-            Read real, unedited Google Business reviews from homeowners and business owners across Garfield,
-            Woodcliff Lake, Jersey City, Paramus, and Northern New Jersey.
+            Read real, unedited Google Business reviews from homeowners and business owners across Cliffwood,
+            Woodcliff Lake, Jersey City, Paramus, and New Jersey.
           </p>
         </Reveal>
 

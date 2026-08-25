@@ -89,7 +89,7 @@ const MASONRY_SERVICES_DATA = [
       { name: "Subsurface Drainage Systems", detail: "Perforated pipe and crushed stone drainage preventing hydraulic pressure buildup." },
     ],
     image: retainingWallImg,
-    alt: "Completed natural stone retaining wall in Garfield NJ",
+    alt: "Completed natural stone retaining wall in Cliffwood NJ",
   },
   {
     id: "chimney-repair",
@@ -244,7 +244,7 @@ const WHY_CHOOSE_MASONRY = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -287,7 +287,7 @@ const MASONRY_PROCESS = [
 const MASONRY_PORTFOLIO = [
   {
     title: "Natural Stone Retaining Wall",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Retaining Walls",
     desc: "Heavy-duty natural fieldstone retaining wall with integrated drainage and stone steps.",
     image: retainingWallImg,
@@ -331,7 +331,7 @@ const MASONRY_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -363,7 +363,7 @@ const MASONRY_FAQS = [
   },
   {
     q: "Do you provide free estimates for masonry work?",
-    a: "Absolutely! We offer 100% free, no-obligation on-site evaluations throughout Garfield, NJ, and our entire 40-mile service radius. Luan Meziu will visit your property, take precise measurements, and provide a clear, transparent written estimate.",
+    a: "Absolutely! We offer 100% free, no-obligation on-site evaluations throughout Cliffwood, NJ, and our entire 40-mile service radius. Luan Meziu will visit your property, take precise measurements, and provide a clear, transparent written estimate.",
   },
   {
     q: "How long does a typical masonry project take?",
@@ -447,7 +447,7 @@ function MasonryServicesPage() {
 
                 {/* Body Text */}
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                  From beautiful stone walls and brickwork to durable foundations and structural repairs, <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong> delivers exceptional masonry services across Garfield, NJ, and Northern New Jersey. Our experienced team combines old-world craftsmanship with modern techniques to create masonry that stands the test of time.
+                  From beautiful stone walls and brickwork to durable foundations and structural repairs, <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong> delivers exceptional masonry services across Cliffwood, NJ, and New Jersey. Our experienced team combines old-world craftsmanship with modern techniques to create masonry that stands the test of time.
                 </p>
 
                 {/* CTAs */}
@@ -504,7 +504,7 @@ function MasonryServicesPage() {
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Master Masons</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Master Masons</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -571,7 +571,7 @@ function MasonryServicesPage() {
                     At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we understand that masonry is more than just stacking bricks or stones—it's an art form that requires precision, skill, and experience. As a family-owned business with over 15 years of hands-on experience, we take pride in delivering masonry work that is both structurally sound and visually stunning.
                   </p>
                   <p>
-                    Whether you need a new retaining wall, brick chimney repair, stone veneer installation, or a complete masonry foundation, our master craftsmen use premium materials and proven techniques to ensure lasting results. We serve both residential and commercial clients across Garfield, NJ, and a 40-mile radius.
+                    Whether you need a new retaining wall, brick chimney repair, stone veneer installation, or a complete masonry foundation, our master craftsmen use premium materials and proven techniques to ensure lasting results. We serve both residential and commercial clients across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction.
@@ -629,7 +629,7 @@ function MasonryServicesPage() {
                 Our Masonry Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Masonry Solutions for Every Need across Garfield &amp; Northern New Jersey
+                Comprehensive Masonry Solutions for Every Need across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -841,7 +841,7 @@ function MasonryServicesPage() {
                   Our Masonry Portfolio
                 </h2>
                 <p className="text-base text-slate-600">
-                  Real Projects. Real Quality. Browse examples of our recent masonry projects across Garfield, NJ, and Northern New Jersey.
+                  Real Projects. Real Quality. Browse examples of our recent masonry projects across Cliffwood, NJ, and New Jersey.
                 </p>
               </div>
 
@@ -909,7 +909,7 @@ function MasonryServicesPage() {
                 Serving Northern New Jersey
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert masonry services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert masonry services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1025,7 +1025,7 @@ function MasonryServicesPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured masonry contractor serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first stone to the final polish."
+                "{BUSINESS.name} is a family-owned, licensed, and insured masonry contractor serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first stone to the final polish."
               </p>
             </div>
 

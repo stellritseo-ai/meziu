@@ -61,9 +61,9 @@ const GoogleIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
-const TITLE = "Google Business Verified Reviews | MEZIU CONSTRUCTION LLC — Garfield, NJ";
+const TITLE = "Google Business Verified Reviews | MEZIU CONSTRUCTION LLC — Cliffwood, NJ";
 const DESCRIPTION =
-  "Read 22+ genuine 5-star Google Business reviews from homeowners and commercial clients across Garfield, Woodcliff Lake, Jersey City, Paramus, and Northern NJ.";
+  "Read 22+ genuine 5-star Google Business reviews from homeowners and commercial clients across Cliffwood, Woodcliff Lake, Jersey City, Paramus, and New Jersey.";
 
 export interface GoogleReview {
   id: string;
@@ -89,7 +89,7 @@ export const ALL_GOOGLE_REVIEWS: GoogleReview[] = [
     stats: "5 reviews · 4 photos",
     timeAgo: "2 years ago",
     rating: 5,
-    location: "Garfield & Northern NJ",
+    location: "Cliffwood & New Jersey",
     category: "Remodeling & Additions",
     hasPhotos: true,
     highlight: "Remodeling our living room with bricks, creating a new backyard, installing irrigation.",
@@ -395,9 +395,8 @@ export const Route = createFileRoute("/reviews")({
           url: "https://www.google.com/search?q=Meziu+Construction",
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Garfield",
+            addressLocality: "Cliffwood",
             addressRegion: "NJ",
-            postalCode: "07026",
             addressCountry: "US",
           },
           aggregateRating: {
@@ -436,7 +435,7 @@ const VIDEO_TESTIMONIALS = [
   {
     id: "vid-1",
     title: "Master Masonry & Retaining Wall Client Project",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     src: welcomeVideo,
     poster: masonryImg,
     category: "Masonry & Stone Work",
@@ -549,8 +548,8 @@ function ReviewsPage() {
 
                 {/* Body Text */}
                 <p className="text-sm sm:text-base font-medium leading-relaxed text-slate-600">
-                  Read genuine, unedited reviews from homeowners and business owners across Garfield,
-                  Woodcliff Lake, Jersey City, Paramus, and Northern NJ. Master contractor Luan Meziu
+                  Read genuine, unedited reviews from homeowners and business owners across Cliffwood,
+                  Woodcliff Lake, Jersey City, Paramus, and New Jersey. Master contractor Luan Meziu
                   and our experienced crew are dedicated to unmatched craftsmanship and transparent communication.
                 </p>
 
@@ -669,8 +668,8 @@ function ReviewsPage() {
                 </h2>
 
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Real evaluation metrics extracted directly from client feedback across Garfield,
-                  Woodcliff Lake, Jersey City, Paramus, Clifton, Wayne, and Bergen County.
+                  Real evaluation metrics extracted directly from client feedback across Cliffwood,
+                  Woodcliff Lake, Jersey City, Paramus, Clifton, Wayne, and New Jersey.
                 </p>
 
                 <div className="pt-2 flex flex-col gap-2 text-xs font-bold text-slate-800">
@@ -918,7 +917,7 @@ function ReviewsPage() {
                     Verified on Google Business Profile
                   </h3>
                   <p className="text-xs text-slate-300 font-medium">
-                    Garfield, NJ 07026 • Family-Owned Master Contractor Since 2009
+                    Cliffwood, NJ • Family-Owned Master Contractor Since 2009
                   </p>
                 </div>
               </div>

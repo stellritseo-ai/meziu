@@ -47,7 +47,7 @@ export function Hero() {
 
           {/* Subtitle Description */}
           <p className="max-w-2xl text-sm sm:text-base lg:text-[18px] font-normal leading-[28px] sm:leading-[32px] lg:leading-[37px] text-white drop-shadow-sm">
-            Trusted, family-owned general contractors serving Garfield, NJ, and beyond. We specialize in masonry, remodeling, and full renovations for residential and commercial clients. Licensed, insured, and bonded since 2009.
+            Trusted, family-owned general contractors serving Cliffwood, NJ, and beyond. We specialize in masonry, remodeling, and full renovations for residential and commercial clients. Licensed, insured, and bonded since 2009.
           </p>
 
           {/* Action Buttons */}
@@ -80,7 +80,7 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-1.5">
               <MapPin className="h-4 w-4 text-[#E56E1A]" />
-              <span>Garfield, NJ & 40 Mile Radius</span>
+              <span>Cliffwood, NJ &amp; 40 Mile Radius</span>
             </div>
           </div>
         </div>

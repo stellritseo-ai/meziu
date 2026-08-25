@@ -118,7 +118,7 @@ const COMMERCIAL_SERVICES_DATA = [
       { name: "Health & Fire Code Compliance", detail: "Grease interceptor tie-ins, FRP wall panels, and ADA multi-stall restrooms." },
     ],
     image: restaurantBuildoutImg,
-    alt: "Restaurant interior construction and commercial kitchen build-out in Garfield, NJ",
+    alt: "Restaurant interior construction and commercial kitchen build-out in Cliffwood, NJ",
   },
   {
     id: "medical-healthcare-construction",
@@ -203,7 +203,7 @@ const COMMERCIAL_SERVICES_DATA = [
       { name: "Security Roll-Down Shutters", detail: "Concealed motorized security grilles protecting inventory after business hours." },
     ],
     image: storefrontFacadeImg,
-    alt: "Commercial storefront facade with natural stone veneer and glass in Garfield, NJ",
+    alt: "Commercial storefront facade with natural stone veneer and glass in Cliffwood, NJ",
   },
   {
     id: "commercial-interior-buildouts",
@@ -300,7 +300,7 @@ const WHY_CHOOSE_COMMERCIAL = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -369,7 +369,7 @@ const COMMERCIAL_PORTFOLIO = [
   },
   {
     title: "Restaurant Dining Room & Commercial Kitchen",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Restaurant Buildout",
     desc: "Full restaurant buildout with Type 1 hood, grease trap, custom solid wood bar, and banquet dining seating.",
     image: restaurantBuildoutImg,
@@ -383,7 +383,7 @@ const COMMERCIAL_PORTFOLIO = [
   },
   {
     title: "Commercial Storefront Stone Facade",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Storefront Renovation",
     desc: "Commercial facade renovation with natural stone veneer, commercial aluminum glass framing, and lighted signage.",
     image: storefrontFacadeImg,
@@ -399,7 +399,7 @@ const COMMERCIAL_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -463,7 +463,7 @@ const COMMERCIAL_FAQS = [
   },
   {
     q: "What commercial service area do you cover?",
-    a: "We serve commercial clients across Garfield, NJ, and a 40-mile radius covering Bergen County, Passaic County, Essex County, Hudson County, and surrounding Northern New Jersey markets.",
+    a: "We serve commercial clients across Cliffwood, NJ, and a 40-mile radius covering Monmouth County, Middlesex County, and surrounding New Jersey markets.",
   },
 ];
 
@@ -584,7 +584,7 @@ function CommercialConstructionPage() {
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Commercial Builders</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Commercial Builders</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -651,7 +651,7 @@ function CommercialConstructionPage() {
                     "Your commercial space is more than just a building—it's the face of your business, the workspace for your team, and the destination for your customers. At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we understand the critical role that quality construction plays in your business success.
                   </p>
                   <p>
-                    As a family-owned business with over 15 years of hands-on experience, we specialize in commercial construction projects of all sizes. Whether you need a new storefront, an office renovation, a restaurant build-out, or a complete commercial building, our experienced team delivers professional results on time and on budget. We serve businesses across Garfield, NJ, and a 40-mile radius.
+                    As a family-owned business with over 15 years of hands-on experience, we specialize in commercial construction projects of all sizes. Whether you need a new storefront, an office renovation, a restaurant build-out, or a complete commercial building, our experienced team delivers professional results on time and on budget. We serve businesses across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction. We understand the importance of minimizing business disruption and meeting strict deadlines."
@@ -709,7 +709,7 @@ function CommercialConstructionPage() {
                 Our Commercial Construction Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Solutions for Every Business across Garfield &amp; Northern New Jersey
+                Comprehensive Solutions for Every Business across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -989,7 +989,7 @@ function CommercialConstructionPage() {
                 Serving Northern New Jersey Commercial Markets
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert commercial construction services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert commercial construction services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1105,7 +1105,7 @@ function CommercialConstructionPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured commercial construction contractor serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first concept to the final handover."
+                "{BUSINESS.name} is a family-owned, licensed, and insured commercial construction contractor serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first concept to the final handover."
               </p>
             </div>
 

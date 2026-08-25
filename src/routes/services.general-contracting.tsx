@@ -301,7 +301,7 @@ const WHY_CHOOSE_CONTRACTING = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -351,7 +351,7 @@ const CONTRACTING_PORTFOLIO = [
   },
   {
     title: "Custom Kitchen Cabinetry & Countertop Install",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Kitchen & Carpentry",
     desc: "Shaker cabinet installation, quartz countertops, tile backsplash, and plumbing fixture hookups.",
     image: kitchenCarpentryImg,
@@ -388,7 +388,7 @@ const CONTRACTING_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -448,7 +448,7 @@ const CONTRACTING_FAQS = [
   },
   {
     q: "What areas do you serve?",
-    a: "We serve Garfield, NJ, and a 40-mile radius covering Bergen County, Passaic County, Essex County, and all surrounding Northern New Jersey communities.",
+    a: "We serve Cliffwood, NJ, and a 40-mile radius covering Monmouth County, Middlesex County, and all surrounding New Jersey communities.",
   },
 ];
 
@@ -561,15 +561,15 @@ function GeneralContractingHandymanPage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 group">
                   <img
                     src={interiorHeroImg}
-                    alt="Master general contractor and handyman team at work in Garfield, NJ"
-                    className="w-full h-[420px] sm:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Master general contractor and handyman team at work in Cliffwood, NJ"
+                    className="w-full h-[400px] sm:h-[460px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
                   
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Master Contractors</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Master Contractors</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -636,7 +636,7 @@ function GeneralContractingHandymanPage() {
                     "Finding a reliable contractor who can handle everything from a leaky faucet to a complete home renovation can be challenging. At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we make it simple. As a full-service general contractor and handyman, we are your one trusted partner for all your home improvement and repair needs.
                   </p>
                   <p>
-                    As a family-owned business with over 15 years of hands-on experience, we understand that every project—big or small—deserves professional attention. Our team is skilled in a wide range of trades, including carpentry, plumbing, electrical, drywall, painting, and more. Whether you need emergency repairs, routine maintenance, or a complex renovation, we have the expertise to get the job done right. We serve both residential and commercial clients across Garfield, NJ, and a 40-mile radius.
+                    As a family-owned business with over 15 years of hands-on experience, we understand that every project—big or small—deserves professional attention. Our team is skilled in a wide range of trades, including carpentry, plumbing, electrical, drywall, painting, and more. Whether you need emergency repairs, routine maintenance, or a complex renovation, we have the expertise to get the job done right. We serve both residential and commercial clients across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction."
@@ -693,7 +693,7 @@ function GeneralContractingHandymanPage() {
                 Our General Contracting Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Construction Management for Every Project across Garfield &amp; Northern New Jersey
+                Comprehensive Construction Management for Every Project across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -933,7 +933,7 @@ function GeneralContractingHandymanPage() {
                   Our Work Portfolio
                 </h2>
                 <p className="text-base text-slate-600">
-                  Real Projects. Real Quality. Browse examples of our general contracting and handyman projects across Garfield, NJ, and Northern New Jersey.
+                  Real Projects. Real Quality. Browse examples of our general contracting and handyman projects across Cliffwood, NJ, and New Jersey.
                 </p>
               </div>
 
@@ -1001,7 +1001,7 @@ function GeneralContractingHandymanPage() {
                 Serving Northern New Jersey
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert general contracting and handyman services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert general contracting and handyman services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1117,7 +1117,7 @@ function GeneralContractingHandymanPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured general contractor and handyman serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the smallest repair to the largest construction project."
+                "{BUSINESS.name} is a family-owned, licensed, and insured general contractor and handyman serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the smallest repair to the largest construction project."
               </p>
             </div>
 

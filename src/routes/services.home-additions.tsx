@@ -161,7 +161,7 @@ const ADDITION_SERVICES_DATA = [
       { name: "Mudroom & Foyer Expansions", detail: "Widening narrow front entries with built-in coat hooks and shoe cubbies." },
     ],
     image: kitchenBumpoutImg,
-    alt: "Kitchen bump-out addition providing space for quartz island and dining nook in Garfield, NJ",
+    alt: "Kitchen bump-out addition providing space for quartz island and dining nook in Cliffwood, NJ",
   },
   {
     id: "home-office-additions",
@@ -302,7 +302,7 @@ const WHY_CHOOSE_ADDITIONS = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -385,7 +385,7 @@ const ADDITIONS_PORTFOLIO = [
   },
   {
     title: "Open-Concept Kitchen Bump-Out Addition",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Kitchen Bump-Out",
     desc: "6-foot cantilevered expansion accommodating 9-foot quartz island and panoramic breakfast nook.",
     image: kitchenBumpoutImg,
@@ -401,7 +401,7 @@ const ADDITIONS_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -437,7 +437,7 @@ const ADDITIONS_FAQS = [
   },
   {
     q: "Do you provide free estimates for home additions?",
-    a: "Absolutely! We offer 100% free, no-obligation on-site estimates throughout Garfield, NJ, and our 40-mile service radius. Luan Meziu will visit your property, evaluate your structural layout, discuss your goals, and provide a clear written estimate.",
+    a: "Absolutely! We offer 100% free, no-obligation on-site estimates throughout Cliffwood, NJ, and our 40-mile service radius. Luan Meziu will visit your property, evaluate your structural layout, discuss your goals, and provide a clear written estimate.",
   },
   {
     q: "Do you handle building permits and town inspections?",
@@ -582,7 +582,7 @@ function HomeAdditionsPage() {
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Addition Specialists</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Addition Specialists</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -649,7 +649,7 @@ function HomeAdditionsPage() {
                     "Your home should grow with you. Whether your family is expanding, you need a home office, or you simply want more living space, a home addition is an investment that enhances both your lifestyle and your property value.
                   </p>
                   <p>
-                    At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we understand that adding to your home is a significant decision. As a family-owned business with over 15 years of hands-on experience, we specialize in custom home additions that are designed to match your existing home's architecture while providing the functionality you need. From design and permitting to construction and finishing, our experienced team handles every aspect of the project. We serve both residential and commercial clients across Garfield, NJ, and a 40-mile radius.
+                    At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we understand that adding to your home is a significant decision. As a family-owned business with over 15 years of hands-on experience, we specialize in custom home additions that are designed to match your existing home's architecture while providing the functionality you need. From design and permitting to construction and finishing, our experienced team handles every aspect of the project. We serve both residential and commercial clients across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction."
@@ -707,7 +707,7 @@ function HomeAdditionsPage() {
                 Our Home Addition Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Solutions for Every Space Need across Garfield &amp; Northern New Jersey
+                Comprehensive Solutions for Every Space Need across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -919,7 +919,7 @@ function HomeAdditionsPage() {
                   Our Home Addition Portfolio
                 </h2>
                 <p className="text-base text-slate-600">
-                  Real Projects. Real Quality. Browse examples of our recent home additions and expansions across Garfield, NJ, and Northern New Jersey.
+                  Real Projects. Real Quality. Browse examples of our recent home additions and expansions across Cliffwood, NJ, and New Jersey.
                 </p>
               </div>
 
@@ -987,7 +987,7 @@ function HomeAdditionsPage() {
                 Serving Northern New Jersey
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert home addition and expansion services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert home addition and expansion services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1103,7 +1103,7 @@ function HomeAdditionsPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured home addition contractor serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first design to the final finishing touch."
+                "{BUSINESS.name} is a family-owned, licensed, and insured home addition contractor serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first design to the final finishing touch."
               </p>
             </div>
 

@@ -42,9 +42,9 @@ import paversImg from "@/assets/pavers.jpg";
 import kitchenImg from "@/assets/kitchen.jpg";
 import heroImg from "@/assets/hero.jpg";
 
-const TITLE = "Get a Free On-Site Estimate | MEZIU CONSTRUCTION LLC — Garfield, NJ";
+const TITLE = "Get a Free On-Site Estimate | MEZIU CONSTRUCTION LLC — Cliffwood, NJ";
 const DESCRIPTION =
-  "Get a free, no-obligation on-site estimate from MEZIU CONSTRUCTION LLC. Professional masonry, concrete, kitchen, bathroom, and remodeling services in Garfield, NJ, and beyond. Call (201) 844-2427 today.";
+  "Get a free, no-obligation on-site estimate from MEZIU CONSTRUCTION LLC. Professional masonry, concrete, kitchen, bathroom, and remodeling services in Cliffwood, NJ, and beyond. Call (201) 844-2427 today.";
 
 export const Route = createFileRoute("/free-estimate")({
   head: () => ({
@@ -73,10 +73,9 @@ export const Route = createFileRoute("/free-estimate")({
             email: "meziullc@gmail.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Garfield",
-              addressLocality: "Garfield",
+              streetAddress: "Cliffwood",
+              addressLocality: "Cliffwood",
               addressRegion: "NJ",
-              postalCode: "07026",
               addressCountry: "US",
             },
             openingHours: "Mo-Fr 07:00-18:00",
@@ -221,7 +220,7 @@ const WHY_CHOOSE_US = [
   { title: "Licensed, Insured & Bonded", desc: "Full compliance with New Jersey state construction regulations." },
   { title: "15+ Years of Experience", desc: "Decades of hands-on expertise across all construction trades." },
   { title: "Residential & Commercial", desc: "Tailored solutions for single-family homes and business properties." },
-  { title: "40-Mile Service Radius", desc: "Proudly serving Garfield, NJ, and surrounding communities." },
+  { title: "40-Mile Service Radius", desc: "Proudly serving Cliffwood, NJ, and surrounding communities." },
   { title: "Bilingual Support", desc: "Fluent English and Spanish communication for clear coordination." },
   { title: "100% Transparent Pricing", desc: "No hidden costs, unexpected surcharges, or surprise fees." },
   { title: "Clean & Safe Job Sites", desc: "Meticulous respect for your property, family safety, and cleanliness." },
@@ -229,7 +228,7 @@ const WHY_CHOOSE_US = [
 
 /* ── Service Area Towns ── */
 const SERVICE_TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -394,7 +393,7 @@ function FreeEstimatePage() {
                         Luan Meziu • Founder &amp; Estimator
                       </h3>
                       <p className="text-xs text-slate-200 font-medium">
-                        Hands-on property evaluation across Garfield &amp; 40-mile radius.
+                        Hands-on property evaluation across Cliffwood &amp; 40-mile radius.
                       </p>
                     </div>
                   </div>
@@ -465,7 +464,7 @@ function FreeEstimatePage() {
                   </div>
                   <h3 className="text-lg font-black text-white">Need an Urgent Estimate?</h3>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
-                    Call our Garfield, NJ headquarters directly to speak with master contractor Luan
+                    Call our Cliffwood, NJ headquarters directly to speak with master contractor Luan
                     Meziu for same-day scheduling.
                   </p>
                 </div>
@@ -649,7 +648,7 @@ function FreeEstimatePage() {
                         <input
                           type="text"
                           required
-                          placeholder="e.g. Garfield, NJ"
+                          placeholder="e.g. Cliffwood, NJ"
                           className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
                         />
                       </div>
@@ -659,7 +658,7 @@ function FreeEstimatePage() {
                         <input
                           type="text"
                           required
-                          placeholder="07026"
+                          placeholder="Zip Code"
                           className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
                         />
                       </div>
@@ -739,7 +738,7 @@ function FreeEstimatePage() {
                       <textarea
                         required
                         rows={4}
-                        placeholder={`Please describe your project in detail. For example:\n• "We need a new paver driveway installed at our home in Garfield..."\n• "We want to completely remodel our outdated kitchen in Clifton with quartz countertops..."\n• "We need a retaining wall built on our sloped property in Wayne (3ft high by 50ft long)..."`}
+                        placeholder={`Please describe your project in detail. For example:\n• "We need a new paver driveway installed at our home in Cliffwood..."\n• "We want to completely remodel our outdated kitchen in Clifton with quartz countertops..."\n• "We need a retaining wall built on our sloped property in Wayne (3ft high by 50ft long)..."`}
                         className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
                       />
                     </div>
@@ -919,7 +918,7 @@ function FreeEstimatePage() {
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase text-slate-400">Headquarters</span>
-                    <span className="text-xs font-black text-slate-950 block">Garfield, NJ 07026</span>
+                    <span className="text-xs font-black text-slate-950 block">Cliffwood, NJ</span>
                   </div>
                 </div>
 
@@ -1062,7 +1061,7 @@ function FreeEstimatePage() {
 
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-medium">
               We provide free on-site estimates and construction services across Northern New Jersey
-              within a 40-mile radius of Garfield, NJ.
+              within a 40-mile radius of Cliffwood, NJ.
             </p>
 
             {/* Town Badges Grid */}
@@ -1180,7 +1179,7 @@ function FreeEstimatePage() {
             <div className="mt-8 pt-6 border-t border-white/20 max-w-2xl mx-auto">
               <p className="text-xs sm:text-sm font-semibold text-white/90 leading-relaxed">
                 MEZIU CONSTRUCTION LLC is a family-owned, licensed, and insured general contractor
-                serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality,
+                serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality,
                 transparency, and customer satisfaction—from the first estimate to the final
                 walkthrough.
               </p>

@@ -33,9 +33,9 @@ import heroImg from "@/assets/hero.jpg";
 import masonryImg from "@/assets/masonry.jpg";
 import stoneworkImg from "@/assets/stonework.jpg";
 
-const TITLE = "About Us | MEZIU CONSTRUCTION LLC — General Contractor Garfield, NJ";
+const TITLE = "About Us | MEZIU CONSTRUCTION LLC — General Contractor Cliffwood, NJ";
 const DESCRIPTION =
-  "Learn about MEZIU CONSTRUCTION LLC, a family-owned, licensed, and insured general contractor serving Garfield, NJ, and beyond since 2009. Get a free estimate today.";
+  "Learn about MEZIU CONSTRUCTION LLC, a family-owned, licensed, and insured general contractor serving Cliffwood, NJ, and beyond since 2009. Get a free estimate today.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -71,13 +71,12 @@ export const Route = createFileRoute("/about")({
             email: "meziullc@gmail.com",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Garfield",
+              addressLocality: "Cliffwood",
               addressRegion: "NJ",
-              postalCode: "07026",
               addressCountry: "US",
             },
             areaServed: [
-              "Garfield",
+              "Cliffwood",
               "Clifton",
               "Passaic",
               "Paterson",
@@ -156,9 +155,9 @@ const TIMELINE = [
     year: "2009",
     title: "MEZIU CONSTRUCTION Officially Founded",
     description:
-      "MEZIU CONSTRUCTION LLC is officially founded on January 9, 2009 in Garfield, NJ, with a mission to provide superior construction, masonry, and concrete services.",
+      "MEZIU CONSTRUCTION LLC is officially founded on January 9, 2009 in Cliffwood, NJ, with a mission to provide superior construction, masonry, and concrete services.",
     highlight: "Jan 9, 2009",
-    tag: "Garfield, NJ",
+    tag: "Cliffwood, NJ",
   },
   {
     year: "2011",
@@ -223,14 +222,14 @@ const CERTIFICATIONS = [
   },
   {
     title: "40-Mile Service Coverage Radius",
-    desc: "Prompt dispatch and responsive project management within 40 miles of Garfield.",
+    desc: "Prompt dispatch and responsive project management within 40 miles of Cliffwood.",
     icon: MapPin,
   },
 ];
 
 /* ── Service Areas ── */
 const TOWNS = [
-  { name: "Garfield", county: "Bergen County (HQ)", primary: true },
+  { name: "Cliffwood", county: "Monmouth County (HQ)", primary: true },
   { name: "Clifton", county: "Passaic County", primary: true },
   { name: "Passaic", county: "Passaic County", primary: true },
   { name: "Paterson", county: "Passaic County", primary: true },
@@ -278,7 +277,7 @@ function AboutPage() {
                 {/* Eyebrow Pill */}
                 <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-100/80 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#B85008] shadow-sm">
                   <Sparkles className="h-3.5 w-3.5 text-[#E56E1A]" />
-                  <span>Garfield, New Jersey • Established Jan 9, 2009</span>
+                  <span>Cliffwood, New Jersey • Established Jan 9, 2009</span>
                 </div>
 
                 {/* Main Headline */}
@@ -292,7 +291,7 @@ function AboutPage() {
                 {/* Sub-headline */}
                 <p className="text-base sm:text-lg font-medium leading-relaxed text-slate-600">
                   Family-owned, fully licensed, and dedicated to excellence since 2009. Serving
-                  Garfield, NJ, and the surrounding communities with pride.
+                  Cliffwood, NJ, and the surrounding communities with pride.
                 </p>
 
                 {/* Action Buttons */}
@@ -320,7 +319,7 @@ function AboutPage() {
                 <div className="relative overflow-hidden rounded-3xl border-2 border-slate-200/90 bg-white p-2 shadow-2xl">
                   <img
                     src={aboutImg}
-                    alt="Meziu Construction Team and Projects in Garfield NJ"
+                    alt="Meziu Construction Team and Projects in Cliffwood NJ"
                     className="h-[320px] sm:h-[380px] w-full object-cover rounded-2xl"
                   />
                   <div className="absolute inset-x-4 bottom-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-lg flex items-center justify-between">
@@ -330,7 +329,7 @@ function AboutPage() {
                       </div>
                       <div>
                         <div className="text-xs font-black text-slate-900">15+ Years Excellence</div>
-                        <div className="text-[10px] text-slate-500 font-semibold">Serving Garfield &amp; North NJ</div>
+                        <div className="text-[10px] text-slate-500 font-semibold">Serving Cliffwood &amp; New Jersey</div>
                       </div>
                     </div>
                     <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
@@ -367,7 +366,7 @@ function AboutPage() {
                   <span>Coverage</span>
                 </div>
                 <div className="text-2xl sm:text-3xl font-black text-slate-950">40 Miles</div>
-                <div className="text-xs text-slate-500 font-medium mt-1">Garfield &amp; North NJ</div>
+                <div className="text-xs text-slate-500 font-medium mt-1">Cliffwood &amp; New Jersey</div>
               </div>
 
               <div className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
@@ -393,7 +392,7 @@ function AboutPage() {
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 border border-orange-200 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[#B85008]">
                   <Sparkles className="w-3.5 h-3.5 text-[#E56E1A]" />
-                  <span>Garfield, New Jersey Heritage</span>
+                  <span>Cliffwood, New Jersey Heritage</span>
                 </div>
 
                 <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-950 leading-[1.15]">
@@ -406,7 +405,7 @@ function AboutPage() {
                       MEZIU CONSTRUCTION LLC
                     </strong>{" "}
                     is a family-owned and operated general contracting business rooted in the heart
-                    of Garfield, New Jersey. Founded on January 9, 2009, by Luan Meziu, our company
+                    of Cliffwood, New Jersey. Founded on January 9, 2009, by Luan Meziu, our company
                     was built on a simple philosophy:{" "}
                     <span className="text-slate-950 font-semibold italic bg-orange-100/60 px-2 py-0.5 rounded">
                       treat every home like it’s your own and deliver honest, high-quality work.
@@ -471,7 +470,7 @@ function AboutPage() {
                         <span>Master Craftsmanship</span>
                       </div>
                       <p className="text-xs font-bold mt-1 text-slate-900">
-                        Garfield, NJ &amp; Surrounding Tri-County
+                        Cliffwood, NJ &amp; Surrounding Areas
                       </p>
                     </div>
                   </div>
@@ -695,7 +694,7 @@ function AboutPage() {
                 </div>
 
                 <div className="pt-6 border-t border-white/20 flex items-center justify-between">
-                  <span className="text-xs font-bold text-amber-200">Garfield, NJ</span>
+                  <span className="text-xs font-bold text-amber-200">Cliffwood, NJ</span>
                   <a
                     href={`tel:${BUSINESS.phone}`}
                     className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-white hover:text-amber-200 transition-colors cursor-pointer"
@@ -943,7 +942,7 @@ function AboutPage() {
 
             {/* 40-mile radius notification */}
             <div className="mt-12 text-center p-4 rounded-2xl bg-white border border-slate-200 max-w-xl mx-auto text-xs font-semibold text-slate-700 shadow-sm">
-              📍 We proudly provide services within a <strong className="text-slate-950 font-bold">40-mile radius</strong> of Garfield, NJ across Bergen, Passaic &amp; Essex Counties.
+              📍 We proudly provide services within a <strong className="text-slate-950 font-bold">40-mile radius</strong> of Cliffwood, NJ across Monmouth, Middlesex &amp; surrounding Counties.
             </div>
 
           </div>
@@ -1054,7 +1053,7 @@ function AboutPage() {
               </h2>
 
               <p className="text-base sm:text-lg text-slate-600 font-medium">
-                As a Garfield-based company, we are deeply invested in our local community. We are
+                As a Cliffwood-based company, we are deeply invested in our local community. We are
                 proud to serve residents and business owners in the following towns and cities
                 within a 40-mile radius:
               </p>
@@ -1084,7 +1083,7 @@ function AboutPage() {
                 Bergen • Passaic • Essex Counties &amp; All Surrounding Areas
               </div>
               <p className="text-xs text-slate-600">
-                Need service outside these towns? If you are within 40 miles of Garfield, NJ, our
+                Need service outside these towns? If you are within 40 miles of Cliffwood, NJ, our
                 master crew is ready to assist you.
               </p>
               <div className="pt-2">

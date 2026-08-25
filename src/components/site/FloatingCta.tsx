@@ -89,7 +89,7 @@ export function FloatingCta() {
       } else if (lower.includes("call") || lower.includes("phone") || lower.includes("luan")) {
         botResponse = `You can reach Luan Meziu directly at ${BUSINESS.phone}, or leave your phone number here and we'll call you back right away.`;
       } else if (lower.includes("zip") || lower.includes("area") || lower.includes("location")) {
-        botResponse = "We proudly serve Garfield, Clifton, Passaic, Paterson, Hackensack, Elmwood Park, Lodi, Saddle Brook, Paramus, Wayne & surrounding towns within 40 miles!";
+        botResponse = "We proudly serve Cliffwood, Aberdeen, Old Bridge, Matawan, Hazlet, Marlboro, Keyport, Holmdel, Sayreville, Edison & surrounding towns within 40 miles!";
       }
 
       setMessages((prev) => [

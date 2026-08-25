@@ -75,7 +75,7 @@ const STONEWORK_SERVICES_DATA = [
       { name: "Chiseled Stone Coping Caps", detail: "Overhanging stone caps protecting wall cores from rain and frost intrusion." },
     ],
     image: stoneWallRetainingImg,
-    alt: "Natural stone retaining wall with interlocking paver driveway in Garfield, NJ",
+    alt: "Natural stone retaining wall with interlocking paver driveway in Cliffwood, NJ",
   },
   {
     id: "stone-veneer-installation",
@@ -194,7 +194,7 @@ const STONEWORK_SERVICES_DATA = [
       { name: "Integrated Landscape Lighting", detail: "Concealed LED under-cap fixtures softly illuminating stone textures at night." },
     ],
     image: stoneWallDetailImg,
-    alt: "Decorative stone garden wall and landscaping in Garfield, NJ",
+    alt: "Decorative stone garden wall and landscaping in Cliffwood, NJ",
   },
   {
     id: "stone-restoration-repair",
@@ -291,7 +291,7 @@ const WHY_CHOOSE_STONEWORK = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -340,7 +340,7 @@ const STONEWORK_PROCESS = [
 const STONEWORK_PORTFOLIO = [
   {
     title: "Natural Stone Retaining Wall & Driveway",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Retaining Wall",
     desc: "Heavy-duty natural stone retaining wall with integrated drainage and interlocking paver driveway.",
     image: stoneWallRetainingImg,
@@ -384,7 +384,7 @@ const STONEWORK_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -420,7 +420,7 @@ const STONEWORK_FAQS = [
   },
   {
     q: "Do you provide free estimates for stone work & walls?",
-    a: "Absolutely! We offer 100% free, no-obligation on-site estimates throughout Garfield, NJ, and our entire 40-mile service radius. Luan Meziu will inspect your property, take measurements, review stone catalogs, and provide a clear written estimate.",
+    a: "Absolutely! We offer 100% free, no-obligation on-site estimates throughout Cliffwood, NJ, and our entire 40-mile service radius. Luan Meziu will inspect your property, take measurements, review stone catalogs, and provide a clear written estimate.",
   },
   {
     q: "How long does a stone wall project take to complete?",
@@ -553,7 +553,7 @@ function StoneWorkWallsPage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 group">
                   <img
                     src={stoneworkHeroImg}
-                    alt="Master natural stone retaining wall and custom masonry in Garfield, NJ"
+                    alt="Master natural stone retaining wall and custom masonry in Cliffwood, NJ"
                     className="w-full h-[420px] sm:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
@@ -561,7 +561,7 @@ function StoneWorkWallsPage() {
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Stone Artisans</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Stone Artisans</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -628,7 +628,7 @@ function StoneWorkWallsPage() {
                     Stone is one of the oldest and most respected building materials in the world—and for good reason. It offers timeless beauty, exceptional durability, and natural character that no other material can replicate. At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we treat stone work as both a science and an art.
                   </p>
                   <p>
-                    As a family-owned business with over 15 years of hands-on experience, we specialize in custom stone work and wall construction. Whether you need a natural stone retaining wall, a beautiful stone facade, a custom walkway, or architectural stone accents, our master craftsmen use premium materials and time-tested techniques to create lasting results. We serve both residential and commercial clients across Garfield, NJ, and a 40-mile radius.
+                    As a family-owned business with over 15 years of hands-on experience, we specialize in custom stone work and wall construction. Whether you need a natural stone retaining wall, a beautiful stone facade, a custom walkway, or architectural stone accents, our master craftsmen use premium materials and time-tested techniques to create lasting results. We serve both residential and commercial clients across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction.
@@ -686,7 +686,7 @@ function StoneWorkWallsPage() {
                 Our Stone Work &amp; Walls Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Stone Solutions for Every Need across Garfield &amp; Northern New Jersey
+                Comprehensive Stone Solutions for Every Need across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -898,7 +898,7 @@ function StoneWorkWallsPage() {
                   Our Stone Work Portfolio
                 </h2>
                 <p className="text-base text-slate-600">
-                  Real Projects. Real Quality. Browse examples of our recent stone work and wall projects across Garfield, NJ, and Northern New Jersey.
+                  Real Projects. Real Quality. Browse examples of our recent stone work and wall projects across Cliffwood, NJ, and New Jersey.
                 </p>
               </div>
 
@@ -966,7 +966,7 @@ function StoneWorkWallsPage() {
                 Serving Northern New Jersey
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert stone work and wall services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert stone work and wall services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1082,7 +1082,7 @@ function StoneWorkWallsPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured stone work contractor serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first stone to the final finish."
+                "{BUSINESS.name} is a family-owned, licensed, and insured stone work contractor serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first stone to the final finish."
               </p>
             </div>
 

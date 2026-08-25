@@ -46,8 +46,8 @@ const REASONS = [
   },
   {
     icon: Clock,
-    title: "Local Garfield NJ Service",
-    desc: "Proudly serving Garfield, NJ, Bergen County, Passaic County, and surrounding communities within 40 miles.",
+    title: "Local Cliffwood NJ Service",
+    desc: "Proudly serving Cliffwood, NJ, Monmouth County, Middlesex County, and surrounding communities within 40 miles.",
   },
 ];
 
@@ -100,7 +100,7 @@ export function WhyUs() {
 
               {/* Subtitle */}
               <p className="text-muted-foreground text-[14px] sm:text-[15px] leading-[28px] mb-6 font-medium max-w-[95%]">
-                We've built our reputation on doing the job right the first time — with the structural safety, fine craftsmanship, and transparent communication that Garfield homeowners and business owners rely on.
+                We've built our reputation on doing the job right the first time — with the structural safety, fine craftsmanship, and transparent communication that Cliffwood homeowners and business owners rely on.
               </p>
 
               {/* Feature Cards Grid */}
@@ -216,7 +216,7 @@ export function WhyUs() {
                 />
                 <div className="text-left">
                   <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Masonry &amp; Concrete</p>
-                  <p className="text-[11px] font-extrabold text-white">Garfield, NJ</p>
+                  <p className="text-[11px] font-extrabold text-white">Cliffwood, NJ</p>
                 </div>
               </div>
             </div>

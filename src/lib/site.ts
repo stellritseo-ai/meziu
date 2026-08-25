@@ -4,7 +4,7 @@ export const BUSINESS = {
   phone: "(201) 844-2427",
   phoneHref: "tel:+12018442427",
   email: "meziullc@gmail.com",
-  city: "Garfield",
+  city: "Cliffwood",
   state: "NJ",
   hours: "Monday–Friday · 7:00 AM–6:00 PM",
   radius: "40 miles",
@@ -87,7 +87,7 @@ export const SERVICES_SUBMENU = [
 export const FAQS = [
   {
     q: "What areas does MEZIU CONSTRUCTION LLC serve?",
-    a: "We serve Garfield, NJ and surrounding communities within approximately a 40-mile service area.",
+    a: "We serve Cliffwood, NJ and surrounding communities within approximately a 40-mile service area.",
   },
   {
     q: "What services do you provide?",

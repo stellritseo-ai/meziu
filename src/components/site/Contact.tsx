@@ -101,7 +101,7 @@ export function Contact() {
               {/* Top Status Pill */}
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white rounded-full px-3.5 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Garfield HQ Dispatch Center</span>
+                <span>Cliffwood HQ Dispatch Center</span>
               </div>
 
               <div>
@@ -173,7 +173,7 @@ export function Contact() {
                     <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                       Headquarters &amp; Service Radius
                     </p>
-                    <p className="font-extrabold text-sm text-white">Garfield, NJ 07026 (~40 Miles)</p>
+                    <p className="font-extrabold text-sm text-white">Cliffwood, NJ (~40 Miles)</p>
                   </div>
                 </div>
 

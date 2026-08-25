@@ -3,7 +3,7 @@ import { MapPin, Navigation, ShieldCheck } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const TOWN_AREAS = [
-  { name: "Garfield (HQ)", x: "50%", y: "48%", primary: true },
+  { name: "Cliffwood (HQ)", x: "50%", y: "48%", primary: true },
   { name: "Clifton", x: "36%", y: "55%" },
   { name: "Passaic", x: "38%", y: "68%" },
   { name: "Paterson", x: "28%", y: "38%" },
@@ -41,7 +41,7 @@ export function ServiceArea() {
             </h2>
 
             <p className="text-muted-foreground text-sm sm:text-base font-medium leading-relaxed max-w-lg mb-8">
-              We are committed to the local community and provide service to these cities within a 40-mile radius of Garfield, NJ:
+              We are committed to the local community and provide service to these cities within a 40-mile radius of Cliffwood, NJ:
             </p>
 
             {/* Interactive Town Capsule Chips */}
@@ -91,8 +91,8 @@ export function ServiceArea() {
           <Reveal delay={120} className="relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden bg-slate-950 border border-border/80 shadow-2xl group">
             {/* Embedded Google Map Background (User Provided Embed URL) */}
             <iframe
-              title="Garfield NJ Service Area Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24133.92749117383!2d-74.13227952141052!3d40.87755916759436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f9445e72b0e1%3A0x2067730e330eb099!2sGarfield%2C%20NJ%2007026%2C%20USA!5e0!3m2!1sen!2snp!4v1786561834737!5m2!1sen!2snp"
+              title="Cliffwood NJ Service Area Map"
+              src="https://maps.google.com/maps?q=Cliffwood,+NJ&t=&z=13&ie=UTF8&iwloc=&output=embed"
               className={`absolute inset-0 w-full h-full transition-all duration-500 border-0 ${
                 isDarkMap
                   ? "opacity-80 grayscale invert contrast-[1.2] brightness-[0.85]"
@@ -146,7 +146,7 @@ export function ServiceArea() {
             {/* Top-Left Live Status Badge */}
             <div className="absolute top-4 left-4 z-20 inline-flex items-center gap-2 bg-slate-950/85 backdrop-blur-md border border-white/20 text-white rounded-full px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider shadow-lg">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Garfield Operations Center</span>
+              <span>Cliffwood Operations Center</span>
             </div>
 
             {/* Top-Right Map View Mode Switcher Button */}
@@ -184,13 +184,13 @@ export function ServiceArea() {
                     Meziu Construction LLC
                   </h4>
                   <p className="text-[11px] text-slate-300 font-medium mt-0.5">
-                    Garfield, NJ 07026 • Direct Dispatch: (201) 844-2427
+                    Cliffwood, NJ • Direct Dispatch: (201) 844-2427
                   </p>
                 </div>
               </div>
 
               <a
-                href="https://maps.google.com/?q=Garfield,+NJ+07026"
+                href="https://maps.google.com/?q=Cliffwood,+NJ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 bg-primary hover:bg-primary/90 text-primary-foreground text-[10px] font-black uppercase tracking-wider rounded-xl px-4 py-2.5 transition-all duration-300 shadow-md hover:scale-105 cursor-pointer shrink-0 w-full sm:w-auto text-center"

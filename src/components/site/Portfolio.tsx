@@ -44,7 +44,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     src,
     cat: (["Masonry", "Concrete", "Remodeling", "Exterior"][i % 4]) as GalleryItem["cat"],
     title: `On-Site Project Video #${i + 1}`,
-    loc: "Garfield & Northern NJ",
+    loc: "Cliffwood & New Jersey",
     featured: i === 0,
   })),
   // Photos
@@ -54,7 +54,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     src,
     cat: (["Masonry", "Concrete", "Remodeling", "Exterior"][i % 4]) as GalleryItem["cat"],
     title: `Project Workmanship #${i + 1}`,
-    loc: "Garfield & Northern NJ",
+    loc: "Cliffwood & New Jersey",
     featured: i % 7 === 0,
   })),
 ];
@@ -131,7 +131,7 @@ export function Portfolio() {
             </h2>
 
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Explore real jobsite photos and videos from our recent masonry, concrete, kitchen, bathroom, and structural projects across Garfield &amp; Northern New Jersey.
+              Explore real jobsite photos and videos from our recent masonry, concrete, kitchen, bathroom, and structural projects across Cliffwood &amp; New Jersey.
             </p>
           </Reveal>
 
@@ -242,7 +242,7 @@ export function Portfolio() {
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   <span className="inline-flex items-center gap-1 text-white text-[11px] font-extrabold bg-black/60 backdrop-blur-md px-3 py-1 rounded-full">
                     <MapPin className="w-3 h-3 text-amber-400" />
-                    <span>Garfield, NJ</span>
+                    <span>Cliffwood, NJ</span>
                   </span>
                 </div>
               </div>
@@ -315,7 +315,7 @@ export function Portfolio() {
                 </span>
                 <p className="flex items-center gap-1.5 text-xs text-muted-foreground font-bold truncate">
                   <MapPin className="h-3.5 w-3.5 text-primary shrink-0" />
-                  <span>Garfield &amp; Northern New Jersey</span>
+                  <span>Cliffwood &amp; New Jersey</span>
                 </p>
               </div>
             </div>

@@ -287,7 +287,7 @@ const WHY_CHOOSE_BATHROOM = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -337,7 +337,7 @@ const BATHROOM_PORTFOLIO = [
   },
   {
     title: "Modern Bathroom with Double Vanity",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     category: "Custom Vanity",
     desc: "Solid oak double floating vanity with quartz top, undermount sinks, and matte black fixtures.",
     image: bathroomVanityImg,
@@ -374,7 +374,7 @@ const BATHROOM_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -410,7 +410,7 @@ const BATHROOM_FAQS = [
   },
   {
     q: "Do you provide free estimates for bathroom remodeling?",
-    a: "Absolutely! We provide 100% free, no-obligation on-site evaluations throughout Garfield, NJ, and our entire 40-mile service radius. Luan Meziu will assess your space, discuss your design vision, and provide a clear written estimate.",
+    a: "Absolutely! We provide 100% free, no-obligation on-site evaluations throughout Cliffwood, NJ, and our entire 40-mile service radius. Luan Meziu will assess your space, discuss your design vision, and provide a clear written estimate.",
   },
   {
     q: "Do you handle all trades (plumbing, electrical, tile setting)?",
@@ -555,7 +555,7 @@ function BathroomRemodelingPage() {
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Bathroom Masters</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Bathroom Masters</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -622,7 +622,7 @@ function BathroomRemodelingPage() {
                     Your bathroom is one of the most important spaces in your home—a place for relaxation, rejuvenation, and daily routines. At <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we understand the value of a well-designed bathroom, and we're passionate about creating spaces that are both beautiful and functional.
                   </p>
                   <p>
-                    As a family-owned business with over 15 years of hands-on experience, we specialize in transforming outdated, inefficient bathrooms into stunning, spa-like retreats. Whether you want a complete bathroom overhaul, a modern update, or simply better use of space, our experienced team handles every aspect of the project—from design and material selection to demolition, construction, and final finishing. We serve both residential and commercial clients across Garfield, NJ, and a 40-mile radius.
+                    As a family-owned business with over 15 years of hands-on experience, we specialize in transforming outdated, inefficient bathrooms into stunning, spa-like retreats. Whether you want a complete bathroom overhaul, a modern update, or simply better use of space, our experienced team handles every aspect of the project—from design and material selection to demolition, construction, and final finishing. We serve both residential and commercial clients across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction.
@@ -680,7 +680,7 @@ function BathroomRemodelingPage() {
                 Our Bathroom Remodeling Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Solutions for Every Bathroom across Garfield &amp; Northern New Jersey
+                Comprehensive Solutions for Every Bathroom across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -892,7 +892,7 @@ function BathroomRemodelingPage() {
                   Our Bathroom Portfolio
                 </h2>
                 <p className="text-base text-slate-600">
-                  Real Projects. Real Quality. Browse examples of our recent bathroom remodeling projects across Garfield, NJ, and Northern New Jersey.
+                  Real Projects. Real Quality. Browse examples of our recent bathroom remodeling projects across Cliffwood, NJ, and New Jersey.
                 </p>
               </div>
 
@@ -960,7 +960,7 @@ function BathroomRemodelingPage() {
                 Serving Northern New Jersey
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert bathroom remodeling services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert bathroom remodeling services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1076,7 +1076,7 @@ function BathroomRemodelingPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured bathroom remodeling contractor serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first design to the final finishing touch."
+                "{BUSINESS.name} is a family-owned, licensed, and insured bathroom remodeling contractor serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first design to the final finishing touch."
               </p>
             </div>
 

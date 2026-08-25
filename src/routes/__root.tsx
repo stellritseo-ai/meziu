@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MEZIU CONSTRUCTION LLC | Garfield, NJ" },
+      { title: "MEZIU CONSTRUCTION LLC | Cliffwood, NJ" },
       {
         name: "description",
         content:
-          "Family-owned construction, masonry and remodeling company serving Garfield, NJ and surrounding areas.",
+          "Family-owned construction, masonry and remodeling company serving Cliffwood, NJ and surrounding areas.",
       },
       { name: "author", content: "MEZIU CONSTRUCTION LLC" },
       { property: "og:type", content: "website" },

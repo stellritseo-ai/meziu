@@ -156,7 +156,7 @@ const CONCRETE_SERVICES_DATA = [
       { name: "Front Entry Steps & Stoops", detail: "Reinforced risers, deep treads, and clean bullnose or square-edge finishing." },
       { name: "Backyard & Basement Access Steps", detail: "Safe, durable staircases with integrated handrail core drilling." },
       { name: "Curved Garden Walkways", detail: "Flowing concrete pathways connecting patios, driveways, and gardens." },
-      { name: "Municipal Sidewalks & Curbing", detail: "Fully compliant with local Garfield and NJ town code regulations." },
+      { name: "Municipal Sidewalks & Curbing", detail: "Fully compliant with local Cliffwood and NJ town code regulations." },
       { name: "Commercial ADA Walkways", detail: "Smooth, continuous accessible ramps and paths with tactile warning mats." },
     ],
     image: concreteStepsImg,
@@ -264,7 +264,7 @@ const WHY_CHOOSE_CONCRETE = [
   },
   {
     title: "40-Mile Service Radius",
-    desc: "Proudly serving Garfield, Bergen County, Passaic County, Essex County, and beyond.",
+    desc: "Proudly serving Cliffwood, Monmouth County, Middlesex County, and beyond.",
     icon: MapPin,
   },
 ];
@@ -357,7 +357,7 @@ const CONCRETE_PORTFOLIO = [
 
 /* ── Northern NJ Service Towns ── */
 const TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -397,7 +397,7 @@ const CONCRETE_FAQS = [
   },
   {
     q: "Do you provide free estimates?",
-    a: "Absolutely! We provide 100% free, no-obligation on-site estimates across Garfield, NJ, and our entire 40-mile service radius. Luan Meziu will visit your property, evaluate grade levels and soil stability, and provide a clear written estimate.",
+    a: "Absolutely! We provide 100% free, no-obligation on-site estimates across Cliffwood, NJ, and our entire 40-mile service radius. Luan Meziu will visit your property, evaluate grade levels and soil stability, and provide a clear written estimate.",
   },
   {
     q: "Do you offer stamped or decorative concrete?",
@@ -477,7 +477,7 @@ function ConcreteContractorPage() {
 
                 {/* Body Text */}
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                  From driveways and patios to foundations and commercial slabs, <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong> delivers professional concrete services across Garfield, NJ, and Northern New Jersey. Our experienced team uses premium materials and proven techniques to create durable, beautiful concrete structures that stand the test of time.
+                  From driveways and patios to foundations and commercial slabs, <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong> delivers professional concrete services across Cliffwood, NJ, and New Jersey. Our experienced team uses premium materials and proven techniques to create durable, beautiful concrete structures that stand the test of time.
                 </p>
 
                 {/* CTAs */}
@@ -534,7 +534,7 @@ function ConcreteContractorPage() {
                   {/* Floating Trust Card Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Garfield, NJ Concrete Specialists</span>
+                      <span className="text-xs font-black uppercase text-[#E56E1A] tracking-wider">Cliffwood, NJ Concrete Specialists</span>
                       <div className="flex items-center gap-1 text-amber-500">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -601,7 +601,7 @@ function ConcreteContractorPage() {
                     Concrete is the backbone of modern construction—and at <strong className="text-slate-900 font-semibold">{BUSINESS.name}</strong>, we treat it with the respect it deserves. As a family-owned business with over 15 years of hands-on experience, we specialize in delivering concrete work that is both structurally sound and visually appealing.
                   </p>
                   <p>
-                    Whether you need a new driveway, a stamped concrete patio, a commercial foundation, or concrete repairs, our master craftsmen use premium-grade materials, proper reinforcement, and expert finishing techniques to ensure lasting results. We serve both residential and commercial clients across Garfield, NJ, and a 40-mile radius.
+                    Whether you need a new driveway, a stamped concrete patio, a commercial foundation, or concrete repairs, our master craftsmen use premium-grade materials, proper reinforcement, and expert finishing techniques to ensure lasting results. We serve both residential and commercial clients across Cliffwood, NJ, and a 40-mile radius.
                   </p>
                   <p className="font-medium text-slate-800 bg-orange-50/60 p-4 rounded-2xl border-l-4 border-[#E56E1A]">
                     Fully licensed, insured, and bonded, we stand behind every project with a commitment to quality, transparency, and customer satisfaction.
@@ -659,7 +659,7 @@ function ConcreteContractorPage() {
                 Our Concrete Services
               </h2>
               <p className="text-lg text-slate-600 font-medium">
-                Comprehensive Concrete Solutions for Every Need across Garfield &amp; Northern New Jersey
+                Comprehensive Concrete Solutions for Every Need across Cliffwood &amp; New Jersey
               </p>
             </div>
 
@@ -871,7 +871,7 @@ function ConcreteContractorPage() {
                   Our Concrete Portfolio
                 </h2>
                 <p className="text-base text-slate-600">
-                  Real Projects. Real Quality. Browse examples of our recent concrete projects across Garfield, NJ, and Northern New Jersey.
+                  Real Projects. Real Quality. Browse examples of our recent concrete projects across Cliffwood, NJ, and New Jersey.
                 </p>
               </div>
 
@@ -939,7 +939,7 @@ function ConcreteContractorPage() {
                 Serving Northern New Jersey
               </h2>
               <p className="text-sm text-slate-600">
-                We provide expert concrete services within a 40-mile radius of Garfield, NJ, including:
+                We provide expert concrete services within a 40-mile radius of Cliffwood, NJ, including:
               </p>
             </div>
 
@@ -1055,7 +1055,7 @@ function ConcreteContractorPage() {
             {/* Reassurance Footer Quote */}
             <div className="pt-6 border-t border-white/20 max-w-3xl mx-auto">
               <p className="text-xs sm:text-sm text-white/85 italic leading-relaxed">
-                "{BUSINESS.name} is a family-owned, licensed, and insured concrete contractor serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first pour to the final finish."
+                "{BUSINESS.name} is a family-owned, licensed, and insured concrete contractor serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality craftsmanship, transparency, and customer satisfaction—from the first pour to the final finish."
               </p>
             </div>
 

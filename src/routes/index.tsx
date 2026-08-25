@@ -18,9 +18,9 @@ import { Footer } from "@/components/site/Footer";
 import { FloatingCta } from "@/components/site/FloatingCta";
 import { FAQS } from "@/lib/site";
 
-const TITLE = "General Contractor in Garfield, NJ | MEZIU CONSTRUCTION LLC";
+const TITLE = "General Contractor in Cliffwood, NJ | MEZIU CONSTRUCTION LLC";
 const DESCRIPTION =
-  "Family-owned general contractor in Garfield, NJ. Masonry, concrete, kitchen & bathroom remodeling, renovations, pavers and additions. Licensed, insured & bonded. Free estimates.";
+  "Family-owned general contractor in Cliffwood, NJ. Masonry, concrete, kitchen & bathroom remodeling, renovations, pavers and additions. Licensed, insured & bonded. Free estimates.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -47,13 +47,13 @@ export const Route = createFileRoute("/")({
           email: "meziullc@gmail.com",
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Garfield",
+            addressLocality: "Cliffwood",
             addressRegion: "NJ",
             addressCountry: "US",
           },
           areaServed: {
             "@type": "GeoCircle",
-            geoMidpoint: { "@type": "GeoCoordinates", latitude: 40.8814, longitude: -74.1132 },
+            geoMidpoint: { "@type": "GeoCoordinates", latitude: 40.4426, longitude: -74.2238 },
             geoRadius: 64374,
           },
           openingHoursSpecification: {

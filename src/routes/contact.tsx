@@ -45,9 +45,9 @@ import aboutImg from "@/assets/about.jpg";
 import heroImg from "@/assets/hero.jpg";
 import stoneworkImg from "@/assets/stonework.jpg";
 
-const TITLE = "Contact MEZIU CONSTRUCTION LLC | General Contractor in Garfield, NJ";
+const TITLE = "Contact MEZIU CONSTRUCTION LLC | General Contractor in Cliffwood, NJ";
 const DESCRIPTION =
-  "Contact MEZIU CONSTRUCTION LLC for expert masonry, concrete, kitchen, bathroom, and remodeling services in Garfield, NJ, and Northern New Jersey. Call (201) 844-2427 or email meziullc@gmail.com.";
+  "Contact MEZIU CONSTRUCTION LLC for expert masonry, concrete, kitchen, bathroom, and remodeling services in Cliffwood, NJ, and surrounding New Jersey. Call (201) 844-2427 or email meziullc@gmail.com.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -76,10 +76,9 @@ export const Route = createFileRoute("/contact")({
             email: "meziullc@gmail.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Garfield",
-              addressLocality: "Garfield",
+              streetAddress: "Cliffwood",
+              addressLocality: "Cliffwood",
               addressRegion: "NJ",
-              postalCode: "07026",
               addressCountry: "US",
             },
             openingHoursSpecification: [
@@ -96,7 +95,7 @@ export const Route = createFileRoute("/contact")({
               jobTitle: "Master Contractor & Owner",
             },
             areaServed: [
-              "Garfield, NJ",
+              "Cliffwood, NJ",
               "Clifton, NJ",
               "Passaic, NJ",
               "Paterson, NJ",
@@ -126,7 +125,7 @@ const BUSINESS_HOURS = [
 
 /* ── Service Area Towns ── */
 const SERVICE_TOWNS = [
-  "Garfield (HQ)",
+  "Cliffwood (HQ)",
   "Clifton",
   "Passaic",
   "Paterson",
@@ -162,7 +161,7 @@ const FAQS = [
   },
   {
     q: "What areas do you serve?",
-    a: "We serve Garfield, NJ, and a comprehensive 40-mile radius covering Bergen, Passaic, and Essex Counties. We regularly work across Clifton, Paramus, Wayne, Hackensack, Ridgewood, and surrounding towns.",
+    a: "We serve Cliffwood, NJ, and a comprehensive 40-mile radius covering Monmouth, Middlesex, and surrounding Counties. We regularly work across Aberdeen, Old Bridge, Matawan, Hazlet, Marlboro, Keyport, and surrounding towns.",
   },
   {
     q: "Do you speak Spanish?",
@@ -217,7 +216,7 @@ function ContactPage() {
                 {/* Eyebrow */}
                 <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-100/80 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#B85008] shadow-sm">
                   <Sparkles className="h-3.5 w-3.5 text-[#E56E1A]" />
-                  <span>Garfield, NJ Headquarters • 40-Mile Service Area</span>
+                  <span>Cliffwood, NJ Headquarters • 40-Mile Service Area</span>
                 </div>
 
                 {/* Main Headline */}
@@ -279,7 +278,7 @@ function ContactPage() {
                   <div className="relative h-80 sm:h-96 w-full rounded-2xl overflow-hidden">
                     <img
                       src={heroImg}
-                      alt="MEZIU Construction team on jobsite in Garfield NJ"
+                      alt="MEZIU Construction team on jobsite in Cliffwood NJ"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
@@ -373,9 +372,9 @@ function ContactPage() {
                   <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
                     Headquarters
                   </span>
-                  <h3 className="text-lg font-black text-slate-950">Garfield, NJ 07026</h3>
+                  <h3 className="text-lg font-black text-slate-950">Cliffwood, NJ</h3>
                   <p className="text-xs text-slate-500 font-medium mt-0.5">
-                    Serving Garfield and 40-mile radius since 2009.
+                    Serving Cliffwood and 40-mile radius since 2009.
                   </p>
                 </div>
               </div>
@@ -828,11 +827,11 @@ function ContactPage() {
                 <div>
                   <div className="inline-flex items-center gap-1.5 rounded-full bg-orange-100 border border-orange-200 px-3.5 py-1 text-xs font-black uppercase tracking-widest text-[#B85008] mb-2">
                     <MapPin className="w-3.5 h-3.5 text-[#E56E1A]" />
-                    <span>Garfield, New Jersey</span>
+                    <span>Cliffwood, New Jersey</span>
                   </div>
                   <h2 className="font-display text-3xl font-black text-slate-950">Find Us</h2>
                   <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
-                    MEZIU CONSTRUCTION LLC is headquartered in Garfield, NJ. We travel directly to
+                    MEZIU CONSTRUCTION LLC is headquartered in Cliffwood, NJ. We travel directly to
                     your property for on-site estimates and project execution.
                   </p>
                 </div>
@@ -841,8 +840,8 @@ function ContactPage() {
                 <div className="rounded-3xl border border-slate-200 bg-slate-50 overflow-hidden shadow-sm space-y-4 p-3">
                   <div className="relative h-72 sm:h-80 w-full rounded-2xl overflow-hidden bg-slate-200">
                     <iframe
-                      title="MEZIU Construction Garfield NJ Map"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48292.01254330193!2d-74.13540860559132!3d40.87879685352601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fd69a47146cb%3A0xe54c8651a5c689d0!2sGarfield%2C%20NJ!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                      title="MEZIU Construction Cliffwood NJ Map"
+                      src="https://maps.google.com/maps?q=Cliffwood,+NJ&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -855,12 +854,12 @@ function ContactPage() {
 
                   <div className="p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div className="text-xs font-semibold text-slate-700">
-                      <strong className="text-slate-950 font-black">Headquarters:</strong> Garfield,
-                      NJ 07026 • 40-Mile Tri-County Service Radius
+                      <strong className="text-slate-950 font-black">Headquarters:</strong> Cliffwood,
+                      NJ • 40-Mile Service Radius
                     </div>
 
                     <a
-                      href="https://maps.google.com/?q=Garfield,+NJ+07026"
+                      href="https://maps.google.com/?q=Cliffwood,+NJ"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-1.5 rounded-full bg-slate-950 text-white px-5 py-2.5 text-xs font-black uppercase tracking-wider hover:bg-[#E56E1A] transition-colors shrink-0"
@@ -892,7 +891,7 @@ function ContactPage() {
 
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-medium">
               We provide construction, masonry, concrete, and remodeling services within a 40-mile
-              radius of Garfield, NJ. Here are some of the communities we serve:
+              radius of Cliffwood, NJ. Here are some of the communities we serve:
             </p>
 
             {/* Town Pills */}
@@ -1065,7 +1064,7 @@ function ContactPage() {
             <div className="mt-8 pt-6 border-t border-white/20 max-w-2xl mx-auto">
               <p className="text-xs sm:text-sm font-semibold text-white/90 leading-relaxed">
                 MEZIU CONSTRUCTION LLC is a family-owned, licensed, and insured general contractor
-                serving Garfield, NJ, and a 40-mile radius since 2009. We are committed to quality,
+                serving Cliffwood, NJ, and a 40-mile radius since 2009. We are committed to quality,
                 transparency, and customer satisfaction—from the first phone call to the final
                 walkthrough.
               </p>

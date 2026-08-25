@@ -344,7 +344,7 @@ export function Header() {
                         <div className="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between bg-slate-50/80 -mx-6 -mb-6 px-6 py-3.5 rounded-b-3xl">
                           <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
                             <Sparkles className="w-4 h-4 text-[#E56E1A]" />
-                            <span>Residential &amp; Commercial projects in Garfield &amp; 40-mile radius</span>
+                            <span>Residential &amp; Commercial projects in Cliffwood &amp; 40-mile radius</span>
                           </div>
 
                           <div className="flex items-center gap-3">

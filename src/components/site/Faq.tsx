@@ -14,7 +14,7 @@ type FaqItem = {
 const FAQ_LIST: FaqItem[] = [
   {
     q: "What areas does MEZIU CONSTRUCTION LLC serve?",
-    a: "We proudly serve Garfield, NJ, Bergen County, Passaic County, and surrounding Northern New Jersey communities within a 40-mile service radius.",
+    a: "We proudly serve Cliffwood, NJ, Monmouth County, Middlesex County, and surrounding New Jersey communities within a 40-mile service radius.",
     cat: "Coverage",
   },
   {
@@ -82,7 +82,7 @@ export function Faq() {
             </h2>
 
             <p className="text-muted-foreground text-sm font-medium leading-relaxed mb-6">
-              Everything you need to know about our masonry, concrete, kitchen, bathroom, and structural remodeling services in Garfield &amp; Northern NJ.
+              Everything you need to know about our masonry, concrete, kitchen, bathroom, and structural remodeling services in Cliffwood &amp; New Jersey.
             </p>
 
             {/* Video Showcase Card — visible on mobile too */}
@@ -170,7 +170,7 @@ export function Faq() {
                     <div className="mt-3 pt-3 border-t border-border/40 flex flex-wrap items-center gap-3 text-[11px] font-bold text-foreground">
                       <div className="flex items-center gap-1 text-primary">
                         <CheckCircle2 className="w-3.5 h-3.5" />
-                        <span>Garfield NJ Headquarters</span>
+                        <span>Cliffwood NJ Headquarters</span>
                       </div>
                       <div className="flex items-center gap-1 text-emerald-500">
                         <CheckCircle2 className="w-3.5 h-3.5" />
@@ -204,7 +204,7 @@ export function Faq() {
             </h2>
 
             <p className="text-muted-foreground text-sm font-medium leading-relaxed mb-8">
-              Everything you need to know about our masonry, concrete, kitchen, bathroom, and structural remodeling services in Garfield &amp; Northern NJ.
+              Everything you need to know about our masonry, concrete, kitchen, bathroom, and structural remodeling services in Cliffwood &amp; New Jersey.
             </p>
 
             {/* Video Showcase Card */}
@@ -287,7 +287,7 @@ export function Faq() {
                       <div className="mt-3 pt-3 border-t border-border/40 flex flex-wrap items-center gap-3 text-[11px] font-bold text-foreground">
                         <div className="flex items-center gap-1 text-primary">
                           <CheckCircle2 className="w-3.5 h-3.5" />
-                          <span>Garfield NJ Headquarters</span>
+                          <span>Cliffwood NJ Headquarters</span>
                         </div>
                         <div className="flex items-center gap-1 text-emerald-500">
                           <CheckCircle2 className="w-3.5 h-3.5" />

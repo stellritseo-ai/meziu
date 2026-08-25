@@ -53,9 +53,9 @@ const videoModules = import.meta.glob<{ default: string }>(
 const imageList = Object.values(imageModules).map((m) => m.default);
 const videoList = Object.values(videoModules).map((m) => m.default);
 
-const TITLE = "Our Projects | MEZIU CONSTRUCTION LLC — Completed Work in Garfield & Northern NJ";
+const TITLE = "Our Projects | MEZIU CONSTRUCTION LLC — Completed Work in Cliffwood & NJ";
 const DESCRIPTION =
-  "Explore the portfolio of MEZIU CONSTRUCTION LLC. See our completed masonry, concrete, kitchen, bathroom, and commercial projects across Garfield, NJ, and Northern New Jersey.";
+  "Explore the portfolio of MEZIU CONSTRUCTION LLC. See our completed masonry, concrete, kitchen, bathroom, and commercial projects across Cliffwood, NJ, and New Jersey.";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -83,7 +83,7 @@ export const Route = createFileRoute("/projects")({
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Natural Stone Retaining Wall & Paver Driveway - Garfield, NJ",
+                name: "Natural Stone Retaining Wall & Paver Driveway - Cliffwood, NJ",
               },
               {
                 "@type": "ListItem",
@@ -118,7 +118,7 @@ export const Route = createFileRoute("/projects")({
               {
                 "@type": "ListItem",
                 position: 8,
-                name: "Commercial Storefront Build-Out - Garfield, NJ",
+                name: "Commercial Storefront Build-Out - Cliffwood, NJ",
               },
             ],
           },
@@ -164,13 +164,13 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     title: "Natural Stone Retaining Wall & Paver Driveway",
     category: "Masonry & Stone Work",
     secondaryCategory: "Pavers & Patios",
-    location: "Garfield, NJ",
+    location: "Cliffwood, NJ",
     client: "Dominick R.",
     role: "Homeowner",
     description:
-      "This Garfield property required a complete transformation of its outdoor space. Our team designed and installed a beautiful natural stone retaining wall that not only added aesthetic appeal but also solved the property's erosion issues. We complemented the wall with a custom interlocking paver driveway, ensuring durability and curb appeal that will last for years. The project was completed on schedule with meticulous attention to base preparation and drainage.",
+      "This Cliffwood property required a complete transformation of its outdoor space. Our team designed and installed a beautiful natural stone retaining wall that not only added aesthetic appeal but also solved the property's erosion issues. We complemented the wall with a custom interlocking paver driveway, ensuring durability and curb appeal that will last for years. The project was completed on schedule with meticulous attention to base preparation and drainage.",
     testimonial:
-      "Meziu Construction built a natural stone retaining wall and custom paver driveway for our property in Garfield. The team was punctual, kept the site immaculate, and completed the job on schedule.",
+      "Meziu Construction built a natural stone retaining wall and custom paver driveway for our property in Cliffwood. The team was punctual, kept the site immaculate, and completed the job on schedule.",
     images: [
       { src: stoneworkImg, caption: "Natural Stone Retaining Wall Craftsmanship" },
       { src: paversImg, caption: "Custom Interlocking Paver Driveway" },
@@ -183,13 +183,13 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     title: "Complete Kitchen & Master Bathroom Renovation",
     category: "Kitchen Remodeling",
     secondaryCategory: "Bathroom Remodeling",
-    location: "Paramus, NJ",
+    location: "Cliffwood, NJ",
     client: "Elena M.",
     role: "Homeowner",
     description:
-      "This Paramus home underwent a full transformation with a complete kitchen and master bathroom renovation. Our team worked closely with the homeowners to design a modern, functional kitchen featuring custom cabinetry, quartz countertops, and premium finishes. The master bathroom was redesigned with a glass walk-in shower, elegant tile work, and updated fixtures. Every detail was carefully planned and executed to create a cohesive, luxurious living space.",
+      "This Cliffwood home underwent a full transformation with a complete kitchen and master bathroom renovation. Our team worked closely with the homeowners to design a modern, functional kitchen featuring custom cabinetry, quartz countertops, and premium finishes. The master bathroom was redesigned with a glass walk-in shower, elegant tile work, and updated fixtures. Every detail was carefully planned and executed to create a cohesive, luxurious living space.",
     testimonial:
-      "We hired Meziu for a complete kitchen and master bathroom renovation in Paramus. Their craftsmanship and attention to layout design exceeded our expectations. Truly 5-star master builders.",
+      "We hired Meziu for a complete kitchen and master bathroom renovation in Cliffwood. Their craftsmanship and attention to layout design exceeded our expectations. Truly 5-star master builders.",
     images: [
       { src: kitchenImg, caption: "Modern Custom Kitchen & Quartz Countertops" },
       { src: bathroomImg, caption: "Glass Walk-In Shower & Custom Tile Work" },
@@ -202,13 +202,13 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     title: "Commercial Concrete Slab & Steps",
     category: "Commercial Construction",
     secondaryCategory: "Concrete & Driveways",
-    location: "Hackensack, NJ",
+    location: "Cliffwood, NJ",
     client: "Robert K.",
     role: "Commercial Property Manager",
     description:
-      "For this Hackensack commercial storefront, MEZIU CONSTRUCTION was contracted to pour an engineered concrete slab and install durable concrete steps. The project required precision leveling, proper reinforcement, and compliance with strict commercial building codes. Our team delivered a flawless foundation that passed city inspection with zero punch-list items, allowing the business to proceed with their build-out on time.",
+      "For this Cliffwood commercial storefront, MEZIU CONSTRUCTION was contracted to pour an engineered concrete slab and install durable concrete steps. The project required precision leveling, proper reinforcement, and compliance with strict commercial building codes. Our team delivered a flawless foundation that passed city inspection with zero punch-list items, allowing the business to proceed with their build-out on time.",
     testimonial:
-      "Engineered concrete slab and steps poured for our commercial storefront in Hackensack. Passed city inspection with zero punch-list items. Highly recommend their concrete crew.",
+      "Engineered concrete slab and steps poured for our commercial storefront in Cliffwood. Passed city inspection with zero punch-list items. Highly recommend their concrete crew.",
     images: [
       { src: concreteImg, caption: "Engineered Concrete Slab Pour" },
       { src: commercialImg, caption: "Reinforced Commercial Front Steps" },
@@ -220,11 +220,11 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     id: "proj-4",
     title: "Two-Story Home Addition",
     category: "Home Renovations & Additions",
-    location: "Ridgewood, NJ",
+    location: "Cliffwood, NJ",
     client: "Anthony V.",
     role: "Homeowner",
     description:
-      "This Ridgewood homeowner needed extra space for their growing family. MEZIU CONSTRUCTION managed the entire two-story addition project from design to completion. Our team handled framing, roofing, electrical, plumbing, and interior finishing—ensuring the new addition seamlessly blended with the existing home's architecture. Clear communication and expert coordination made this complex project a success.",
+      "This Cliffwood homeowner needed extra space for their growing family. MEZIU CONSTRUCTION managed the entire two-story addition project from design to completion. Our team handled framing, roofing, electrical, plumbing, and interior finishing—ensuring the new addition seamlessly blended with the existing home's architecture. Clear communication and expert coordination made this complex project a success.",
     testimonial:
       "From our first free estimate to final walkthrough, communication was seamless. They framed and built a beautiful two-story home addition that looks original to our house.",
     images: [
@@ -238,11 +238,11 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     id: "proj-5",
     title: "Brick Chimney Repair & Front Porch Rebuild",
     category: "Masonry & Stone Work",
-    location: "Passaic County, NJ",
+    location: "Cliffwood, NJ",
     client: "Sarah T.",
     role: "Homeowner",
     description:
-      "Aging brickwork posed a safety concern for this Passaic County homeowner. Our masonry team carefully repaired the deteriorating brick chimney, ensuring structural integrity and weather resistance. We also rebuilt the front masonry porch, restoring its original charm while reinforcing the foundation. The result is a beautiful, safe, and long-lasting entryway that enhances the home's curb appeal.",
+      "Aging brickwork posed a safety concern for this Cliffwood homeowner. Our masonry team carefully repaired the deteriorating brick chimney, ensuring structural integrity and weather resistance. We also rebuilt the front masonry porch, restoring its original charm while reinforcing the foundation. The result is a beautiful, safe, and long-lasting entryway that enhances the home's curb appeal.",
     testimonial:
       "Repaired our aging brick chimney and rebuilt our front masonry porch. Professional, honest pricing, and top-notch structural brickwork. Will definitely hire again.",
     images: [
@@ -254,15 +254,15 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   },
   {
     id: "proj-6",
-    title: "Full Home Remodel – Clifton",
+    title: "Full Home Remodel – Cliffwood",
     category: "Home Renovations & Additions",
-    location: "Clifton, NJ",
+    location: "Cliffwood, NJ",
     client: "Michael B.",
     role: "Real Estate Investor",
     description:
-      "This Clifton home required a complete interior remodel. MEZIU CONSTRUCTION coordinated every aspect of the project, including framing, drywall, plumbing, electrical work, tile installation, and trim carpentry. Our general contracting expertise allowed us to manage multiple trades efficiently, delivering a beautiful, fully renovated home without delays or budget overruns.",
+      "This Cliffwood home required a complete interior remodel. MEZIU CONSTRUCTION coordinated every aspect of the project, including framing, drywall, plumbing, electrical work, tile installation, and trim carpentry. Our general contracting expertise allowed us to manage multiple trades efficiently, delivering a beautiful, fully renovated home without delays or budget overruns.",
     testimonial:
-      "Outstanding general contracting service. Meziu coordinated framing, plumbing, tile work, and trim for our full home remodel in Clifton without delays.",
+      "Outstanding general contracting service. Meziu coordinated framing, plumbing, tile work, and trim for our full home remodel in Cliffwood without delays.",
     images: [
       { src: renovationImg, caption: "Full Interior Transformation" },
       { src: kitchenImg, caption: "Open-Concept Living & Tile Work" },
@@ -274,11 +274,11 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     id: "proj-7",
     title: "Paver Patio with Fire Pit & Built-In Seating",
     category: "Pavers & Patios",
-    location: "Wayne, NJ",
+    location: "Cliffwood, NJ",
     client: "Jessica P.",
     role: "Homeowner",
     description:
-      "We transformed this Wayne backyard into an inviting outdoor living space. Our team installed interlocking pavers with deep base preparation to prevent settling, and added built-in seating and a custom fire pit. The result is a functional, beautiful patio perfect for entertaining and family gatherings—designed to withstand New Jersey's harsh winter weather.",
+      "We transformed this Cliffwood backyard into an inviting outdoor living space. Our team installed interlocking pavers with deep base preparation to prevent settling, and added built-in seating and a custom fire pit. The result is a functional, beautiful patio perfect for entertaining and family gatherings—designed to withstand New Jersey's harsh winter weather.",
     testimonial:
       "Installed interlocking paver patio with built-in seating and outdoor fire pit. The base preparation was deep and thorough — zero settling after harsh winter weather.",
     images: [
@@ -292,11 +292,11 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     id: "proj-8",
     title: "Commercial Storefront Build-Out",
     category: "Commercial Construction",
-    location: "Garfield, NJ",
-    client: "Carlos G.",
+    location: "Cliffwood, NJ",
+    client: "Business Owner",
     role: "Business Owner",
     description:
-      "This Garfield business owner needed a complete interior build-out for their new storefront. MEZIU CONSTRUCTION handled everything from framing and drywall to electrical, lighting, and flooring. We completed the project ahead of schedule, allowing the client to open their doors for business on time with a professional, welcoming space.",
+      "This Cliffwood business owner needed a complete interior build-out for their new storefront. MEZIU CONSTRUCTION handled everything from framing and drywall to electrical, lighting, and flooring. We completed the project ahead of schedule, allowing the client to open their doors for business on time with a professional, welcoming space.",
     testimonial:
       "Storefront interior build-out completed ahead of our grand opening. Meziu Construction handles every detail with precision and professional integrity.",
     images: [
@@ -332,7 +332,7 @@ const GALLERY_MEDIA: GalleryItem[] = [
       "Commercial Storefront Progress",
     ][i % 6] || `On-Site Project Video #${i + 1}`,
     category: ["Masonry", "Concrete", "Remodeling", "Pavers", "Additions", "Commercial"][i % 6],
-    location: ["Garfield, NJ", "Paramus, NJ", "Clifton, NJ", "Wayne, NJ", "Hackensack, NJ", "Passaic, NJ"][i % 6],
+    location: ["Cliffwood, NJ", "Cliffwood, NJ", "Cliffwood, NJ", "Cliffwood, NJ", "Cliffwood, NJ", "Cliffwood, NJ"][i % 6],
   })),
   ...imageList.map((src, i) => {
     const titles = [
@@ -350,18 +350,18 @@ const GALLERY_MEDIA: GalleryItem[] = [
       "Master Suite Bathroom Remodel",
     ];
     const locs = [
-      "Elmwood Park, NJ",
-      "Lodi, NJ",
-      "Saddle Brook, NJ",
-      "Paterson, NJ",
-      "Passaic, NJ",
-      "Hackensack, NJ",
-      "Clifton, NJ",
-      "Garfield, NJ",
-      "Wayne, NJ",
-      "Paramus, NJ",
-      "Ridgewood, NJ",
-      "Nutley, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
+      "Cliffwood, NJ",
     ];
     return {
       id: `img-${i}`,
@@ -440,7 +440,7 @@ function ProjectsPage() {
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-100/80 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#B85008] mb-5 shadow-sm">
                 <Sparkles className="h-3.5 w-3.5 text-[#E56E1A]" />
-                <span>On-Site Portfolio • Garfield &amp; Northern New Jersey</span>
+                <span>On-Site Portfolio • Cliffwood &amp; New Jersey</span>
               </div>
 
               {/* Main Headline */}
@@ -456,7 +456,7 @@ function ProjectsPage() {
               {/* Body Text */}
               <p className="mt-4 text-base sm:text-lg font-medium leading-relaxed text-slate-600 max-w-3xl">
                 Browse our portfolio of completed masonry, concrete, remodeling, and renovation
-                projects across Garfield and Northern New Jersey. Each project reflects our
+                projects across Cliffwood and New Jersey. Each project reflects our
                 commitment to craftsmanship, attention to detail, and client satisfaction.
               </p>
 
@@ -885,9 +885,9 @@ function ProjectsPage() {
             {/* Reassurance Footer Note */}
             <div className="mt-8 pt-6 border-t border-white/20 max-w-2xl mx-auto">
               <p className="text-xs sm:text-sm font-semibold text-white/90 leading-relaxed">
-                All projects are completed by our experienced, hands-on master team. We are fully
-                licensed, insured, and bonded. Proudly serving Garfield, NJ, and a 40-mile radius
-                since 2009.
+                MEZIU CONSTRUCTION LLC is a family-owned master contractor established in 2009. Fully
+                licensed, insured, and bonded. Proudly serving Cliffwood, NJ, and a 40-mile radius
+                with uncompromised craftsmanship and personal service.
               </p>
             </div>
           </div>
