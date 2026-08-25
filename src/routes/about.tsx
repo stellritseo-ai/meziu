@@ -24,7 +24,6 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { FloatingCta } from "@/components/site/FloatingCta";
 import { BUSINESS } from "@/lib/site";
 
 // Existing authentic assets
@@ -1152,7 +1151,6 @@ function AboutPage() {
       </main>
 
       <Footer />
-      <FloatingCta />
     </div>
   );
 }

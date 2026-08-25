@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import { ArrowRight, Check, Play, Pause, Volume2, VolumeX, ShieldCheck, Sparkles, Award, Clock, MapPin } from "lucide-react";
 import aboutImg from "@/assets/about.jpg";
 import masonryImg from "@/assets/masonry.jpg";
-import welcomeVideo from "@/assets/welcom1.mp4";
 import { Reveal } from "./Reveal";
 
 const POINTS = [
@@ -137,7 +136,7 @@ export function About() {
             <div className="relative h-[24rem] sm:h-[28rem] lg:h-[32rem] xl:h-[34rem] w-full overflow-hidden">
               <video
                 ref={videoRef}
-                src={welcomeVideo}
+                src="https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688680/welcom1.mp4"
                 poster={aboutImg}
                 autoPlay
                 loop

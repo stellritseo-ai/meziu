@@ -1,21 +1,20 @@
 import { ArrowRight, ChevronDown, MapPin, Phone, ShieldCheck, Star, Award } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
-import heroVideo from "@/assets/hero.mp4";
 import { BUSINESS } from "@/lib/site";
 
 export function Hero() {
   return (
     <section id="top" className="relative isolate min-h-svh overflow-hidden bg-slate-950">
-      {/* Background Video with Image Fallback */}
+      {/* Background Video */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        poster={heroImg}
+        src="https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688557/hero.mov"
         className="absolute inset-0 h-full w-full object-cover scale-105 transition-transform duration-1000"
       >
-        <source src={heroVideo} type="video/mp4" />
+        <source src="https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688557/hero.mov" type="video/mp4" />
+        <source src="https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688557/hero.mov" type="video/quicktime" />
       </video>
 
       {/* Premium Gradient Overlay */}

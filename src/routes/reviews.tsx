@@ -22,13 +22,8 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { FloatingCta } from "@/components/site/FloatingCta";
 import { BUSINESS } from "@/lib/site";
 
-// Import project video clips for video testimonials
-import welcomeVideo from "@/assets/welcom1.mp4";
-import whyUsVideo from "@/assets/whyus.mp4";
-import heroVideo from "@/assets/hero.mp4";
 import masonryImg from "@/assets/masonry.jpg";
 import paversImg from "@/assets/pavers.jpg";
 import kitchenImg from "@/assets/kitchen.jpg";
@@ -436,7 +431,7 @@ const VIDEO_TESTIMONIALS = [
     id: "vid-1",
     title: "Master Masonry & Retaining Wall Client Project",
     location: "Cliffwood, NJ",
-    src: welcomeVideo,
+    src: "https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688680/welcom1.mp4",
     poster: masonryImg,
     category: "Masonry & Stone Work",
   },
@@ -444,7 +439,7 @@ const VIDEO_TESTIMONIALS = [
     id: "vid-2",
     title: "Custom Paver Patio & Fire Pit Walkthrough",
     location: "Wayne, NJ",
-    src: whyUsVideo,
+    src: "https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688871/whyus.mp4",
     poster: paversImg,
     category: "Pavers & Patios",
   },
@@ -452,7 +447,7 @@ const VIDEO_TESTIMONIALS = [
     id: "vid-3",
     title: "Full Interior Renovation & Living Space Remodel",
     location: "Clifton, NJ",
-    src: heroVideo,
+    src: "https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688557/hero.mov",
     poster: kitchenImg,
     category: "Home Renovations",
   },
@@ -1240,7 +1235,6 @@ function ReviewsPage() {
       </main>
 
       <Footer />
-      <FloatingCta />
     </div>
   );
 }

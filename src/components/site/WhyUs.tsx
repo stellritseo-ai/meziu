@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { useState, useRef } from "react";
 import renovation from "@/assets/renovation.jpg";
-import whyusVideo from "@/assets/whyus.mp4";
 import masonry from "@/assets/masonry.jpg";
 import { Reveal } from "./Reveal";
 
@@ -153,7 +152,7 @@ export function WhyUs() {
               {/* Background Video */}
               <video
                 ref={videoRef}
-                src={whyusVideo}
+                src="https://res.cloudinary.com/ki6vfkhw/video/upload/v1787688871/whyus.mp4"
                 poster={renovation}
                 autoPlay
                 loop

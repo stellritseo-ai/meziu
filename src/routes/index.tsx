@@ -15,7 +15,6 @@ import { ServiceArea } from "@/components/site/ServiceArea";
 import { Faq } from "@/components/site/Faq";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
-import { FloatingCta } from "@/components/site/FloatingCta";
 import { FAQS } from "@/lib/site";
 
 const TITLE = "General Contractor in Cliffwood, NJ | MEZIU CONSTRUCTION LLC";
@@ -103,7 +102,6 @@ function Index() {
         <Contact />
       </main>
       <Footer />
-      <FloatingCta />
     </div>
   );
 }

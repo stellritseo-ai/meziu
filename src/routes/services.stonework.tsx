@@ -38,7 +38,6 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { FloatingCta } from "@/components/site/FloatingCta";
 import { BUSINESS } from "@/lib/site";
 
 // Authentic project assets
@@ -1132,7 +1131,6 @@ function StoneWorkWallsPage() {
       )}
 
       <Footer />
-      <FloatingCta />
     </div>
   );
 }
