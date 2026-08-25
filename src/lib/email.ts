@@ -8,19 +8,52 @@ export interface EmailPayload {
   fields: Record<string, string>;
 }
 
+// Read configuration from environment variables
+function getEmailConfig() {
+  const host =
+    process.env.ZOHO_SMTP_HOST ||
+    import.meta.env.VITE_ZOHO_SMTP_HOST ||
+    "smtppro.zoho.com";
+  const port = Number(
+    process.env.ZOHO_SMTP_PORT ||
+    import.meta.env.VITE_ZOHO_SMTP_PORT ||
+    465
+  );
+  const user =
+    process.env.ZOHO_SMTP_USER ||
+    import.meta.env.VITE_ZOHO_SMTP_USER ||
+    "";
+  const pass =
+    process.env.ZOHO_SMTP_PASS ||
+    import.meta.env.VITE_ZOHO_SMTP_PASS ||
+    "";
+  const recipient =
+    process.env.ZOHO_RECIPIENT_EMAIL ||
+    import.meta.env.VITE_ZOHO_RECIPIENT_EMAIL ||
+    user;
+
+  return { host, port, user, pass, recipient };
+}
+
 export const sendZohoEmail = createServerFn({ method: "POST" })
   .validator((payload: EmailPayload) => payload)
   .handler(async ({ data }) => {
     const { subject, fromName, replyTo, fields } = data;
+    const config = getEmailConfig();
+
+    if (!config.user || !config.pass) {
+      console.error("Missing Zoho SMTP credentials in environment variables.");
+      throw new Error("SMTP service credentials not configured.");
+    }
 
     // Create Zoho SMTP transporter
     const transporter = nodemailer.createTransport({
-      host: "smtppro.zoho.com",
-      port: 465,
-      secure: true, // use SSL
+      host: config.host,
+      port: config.port,
+      secure: config.port === 465, // true for 465, false for 587
       auth: {
-        user: "eva@stellrit.com",
-        pass: "VdL71m6nRrV7",
+        user: config.user,
+        pass: config.pass,
       },
     });
 
@@ -65,9 +98,9 @@ export const sendZohoEmail = createServerFn({ method: "POST" })
 
     try {
       const info = await transporter.sendMail({
-        from: `"${fromName || "MEZIU Construction Website"}" <eva@stellrit.com>`,
-        to: "eva@stellrit.com",
-        replyTo: replyTo || "eva@stellrit.com",
+        from: `"${fromName || "MEZIU Construction Website"}" <${config.user}>`,
+        to: config.recipient,
+        replyTo: replyTo || config.user,
         subject: subject || "New Website Submission - MEZIU Construction",
         text,
         html,
@@ -75,23 +108,23 @@ export const sendZohoEmail = createServerFn({ method: "POST" })
 
       return { success: true, messageId: info.messageId };
     } catch (err: unknown) {
-      console.error("Zoho SMTP Error:", err);
-      // Try fallback to smtp.zoho.com if smtppro fails
+      console.error("Primary Zoho SMTP Error, attempting fallback:", err);
+      // Try fallback to smtp.zoho.com
       try {
         const fallbackTransporter = nodemailer.createTransport({
           host: "smtp.zoho.com",
-          port: 465,
-          secure: true,
+          port: config.port,
+          secure: config.port === 465,
           auth: {
-            user: "eva@stellrit.com",
-            pass: "VdL71m6nRrV7",
+            user: config.user,
+            pass: config.pass,
           },
         });
 
         const info = await fallbackTransporter.sendMail({
-          from: `"${fromName || "MEZIU Construction Website"}" <eva@stellrit.com>`,
-          to: "eva@stellrit.com",
-          replyTo: replyTo || "eva@stellrit.com",
+          from: `"${fromName || "MEZIU Construction Website"}" <${config.user}>`,
+          to: config.recipient,
+          replyTo: replyTo || config.user,
           subject: subject || "New Website Submission - MEZIU Construction",
           text,
           html,

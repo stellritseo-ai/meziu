@@ -10,9 +10,6 @@ export const BUSINESS = {
   radius: "40 miles",
 } as const;
 
-export const ZOHO_EMAIL_CONFIG = {
-  email: "eva@stellrit.com",
-} as const;
 
 export const NAV = [
   { label: "Home", href: "/" },
