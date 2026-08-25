@@ -33,6 +33,7 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { BUSINESS } from "@/lib/site";
+import { submitToWeb3Forms } from "@/lib/web3forms";
 
 // Existing authentic image assets
 import aboutImg from "@/assets/about.jpg";
@@ -278,12 +279,39 @@ function FreeEstimatePage() {
   const [timeline, setTimeline] = useState<string>("As soon as possible");
   const [budget, setBudget] = useState<string>("$10,000 - $25,000");
   const [hearAbout, setHearAbout] = useState<string>("Google Search");
+  const [submitting, setSubmitting] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.set("selectedService", selectedService);
+    data.set("propertyType", propertyType);
+    data.set("timeline", timeline);
+    data.set("budget", budget);
+    data.set("hearAbout", hearAbout);
+
+    const firstName = String(data.get("firstName") || "");
+    const lastName = String(data.get("lastName") || "");
+    const email = String(data.get("email") || "");
+
+    try {
+      await submitToWeb3Forms(data, {
+        subject: `New Free Estimate Request (${selectedService}) - ${firstName} ${lastName}`,
+        fromName: `${firstName} ${lastName}`.trim() || "Website Visitor",
+        replyTo: email,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -596,6 +624,7 @@ function FreeEstimatePage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">First Name *</label>
                         <input
+                          name="firstName"
                           type="text"
                           required
                           placeholder="e.g. Dominick"
@@ -606,6 +635,7 @@ function FreeEstimatePage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Last Name *</label>
                         <input
+                          name="lastName"
                           type="text"
                           required
                           placeholder="e.g. Ricci"
@@ -616,6 +646,7 @@ function FreeEstimatePage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Phone Number *</label>
                         <input
+                          name="phone"
                           type="tel"
                           required
                           placeholder="(201) 555-0123"
@@ -626,6 +657,7 @@ function FreeEstimatePage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Email Address *</label>
                         <input
+                          name="email"
                           type="email"
                           required
                           placeholder="name@example.com"
@@ -636,6 +668,7 @@ function FreeEstimatePage() {
                       <div className="space-y-1.5 sm:col-span-2">
                         <label className="text-xs font-bold text-slate-900">Street Address</label>
                         <input
+                          name="streetAddress"
                           type="text"
                           placeholder="123 Main Street"
                           className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
@@ -645,6 +678,7 @@ function FreeEstimatePage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">City / Town *</label>
                         <input
+                          name="city"
                           type="text"
                           required
                           placeholder="e.g. Cliffwood, NJ"
@@ -655,6 +689,7 @@ function FreeEstimatePage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Zip Code *</label>
                         <input
+                          name="zipCode"
                           type="text"
                           required
                           placeholder="Zip Code"
@@ -735,6 +770,7 @@ function FreeEstimatePage() {
                         Project Scope &amp; Details *
                       </label>
                       <textarea
+                        name="details"
                         required
                         rows={4}
                         placeholder={`Please describe your project in detail. For example:\n• "We need a new paver driveway installed at our home in Cliffwood..."\n• "We want to completely remodel our outdated kitchen in Clifton with quartz countertops..."\n• "We need a retaining wall built on our sloped property in Wayne (3ft high by 50ft long)..."`}
@@ -824,7 +860,7 @@ function FreeEstimatePage() {
                       <p className="text-[11px] text-slate-500 font-medium">
                         Upload photos, sketches, or inspiration images (Max file size: 10MB)
                       </p>
-                      <input type="file" multiple className="text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-orange-50 file:text-[#E56E1A] hover:file:bg-orange-100 cursor-pointer" />
+                      <input name="attachments" type="file" multiple className="text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-orange-50 file:text-[#E56E1A] hover:file:bg-orange-100 cursor-pointer" />
                     </div>
                   </div>
 
@@ -832,10 +868,11 @@ function FreeEstimatePage() {
                   <div className="space-y-3 pt-2">
                     <button
                       type="submit"
-                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={submitting}
+                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Send Free Estimate Request</span>
+                      <span>{submitting ? "Sending Request..." : "Send Free Estimate Request"}</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed font-medium">

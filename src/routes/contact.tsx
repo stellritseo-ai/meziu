@@ -38,6 +38,7 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { BUSINESS } from "@/lib/site";
+import { submitToWeb3Forms } from "@/lib/web3forms";
 
 // Existing authentic image assets
 import aboutImg from "@/assets/about.jpg";
@@ -178,12 +179,39 @@ function ContactPage() {
   const [preferredContact, setPreferredContact] = useState<string>("Phone");
   const [bestTime, setBestTime] = useState<string>("Morning (8AM – 12PM)");
   const [hearAbout, setHearAbout] = useState<string>("Google Search");
+  const [submitting, setSubmitting] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.set("inquiryType", inquiryType);
+    data.set("serviceType", selectedService);
+    data.set("preferredContact", preferredContact);
+    data.set("bestTime", bestTime);
+    data.set("hearAbout", hearAbout);
+
+    const firstName = String(data.get("firstName") || "");
+    const lastName = String(data.get("lastName") || "");
+    const email = String(data.get("email") || "");
+
+    try {
+      await submitToWeb3Forms(data, {
+        subject: `New Contact Us Message (${inquiryType}) - ${firstName} ${lastName}`,
+        fromName: `${firstName} ${lastName}`.trim() || "Website Visitor",
+        replyTo: email,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -522,6 +550,7 @@ function ContactPage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">First Name *</label>
                         <input
+                          name="firstName"
                           type="text"
                           required
                           placeholder="e.g. Elena"
@@ -532,6 +561,7 @@ function ContactPage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Last Name *</label>
                         <input
+                          name="lastName"
                           type="text"
                           required
                           placeholder="e.g. Miller"
@@ -542,6 +572,7 @@ function ContactPage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Phone Number *</label>
                         <input
+                          name="phone"
                           type="tel"
                           required
                           placeholder="(201) 555-0123"
@@ -552,6 +583,7 @@ function ContactPage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Email Address *</label>
                         <input
+                          name="email"
                           type="email"
                           required
                           placeholder="name@example.com"
@@ -562,6 +594,7 @@ function ContactPage() {
                       <div className="space-y-1.5 sm:col-span-2">
                         <label className="text-xs font-bold text-slate-900">Street Address</label>
                         <input
+                          name="streetAddress"
                           type="text"
                           placeholder="123 Main Street"
                           className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
@@ -571,9 +604,10 @@ function ContactPage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">City / Town *</label>
                         <input
+                          name="city"
                           type="text"
                           required
-                          placeholder="e.g. Paramus, NJ"
+                          placeholder="e.g. Cliffwood, NJ"
                           className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
                         />
                       </div>
@@ -581,9 +615,10 @@ function ContactPage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-900">Zip Code *</label>
                         <input
+                          name="zipCode"
                           type="text"
                           required
-                          placeholder="07652"
+                          placeholder="Zip Code"
                           className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
                         />
                       </div>
@@ -632,6 +667,7 @@ function ContactPage() {
                         Service Type (Optional / If Applicable)
                       </label>
                       <select
+                        name="serviceType"
                         value={selectedService}
                         onChange={(e) => setSelectedService(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A]"
@@ -657,6 +693,7 @@ function ContactPage() {
                         Message *
                       </label>
                       <textarea
+                        name="message"
                         required
                         rows={4}
                         placeholder="Please describe your project or inquiry in detail. The more information you provide, the better we can assist you..."
@@ -740,7 +777,7 @@ function ContactPage() {
                       <p className="text-[11px] text-slate-500 font-medium">
                         Upload photos, project plans, or inspiration files (Max file size: 10MB)
                       </p>
-                      <input type="file" multiple className="text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-orange-50 file:text-[#E56E1A] hover:file:bg-orange-100 cursor-pointer" />
+                      <input name="attachments" type="file" multiple className="text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-orange-50 file:text-[#E56E1A] hover:file:bg-orange-100 cursor-pointer" />
                     </div>
                   </div>
 
@@ -748,10 +785,11 @@ function ContactPage() {
                   <div className="space-y-3 pt-2">
                     <button
                       type="submit"
-                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={submitting}
+                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Send Message</span>
+                      <span>{submitting ? "Sending Message..." : "Send Message"}</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed font-medium">

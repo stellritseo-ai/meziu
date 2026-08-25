@@ -10,6 +10,11 @@ export const BUSINESS = {
   radius: "40 miles",
 } as const;
 
+export const WEB3FORMS_CONFIG = {
+  accessKey: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "",
+  recipientEmail: "eva@stellrit.com",
+} as const;
+
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },

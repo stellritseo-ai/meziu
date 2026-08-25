@@ -23,6 +23,7 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { BUSINESS } from "@/lib/site";
+import { submitToWeb3Forms } from "@/lib/web3forms";
 
 import masonryImg from "@/assets/masonry.jpg";
 import paversImg from "@/assets/pavers.jpg";
@@ -467,6 +468,7 @@ function ReviewsPage() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [formRating, setFormRating] = useState<number>(5);
   const [recommend, setRecommend] = useState<boolean>(true);
+  const [submitting, setSubmitting] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   // Filtered Reviews computation
@@ -494,9 +496,31 @@ function ReviewsPage() {
     });
   }, [selectedCat, searchQuery]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.set("rating", `${formRating} / 5 Stars`);
+    data.set("wouldRecommend", recommend ? "Yes" : "No");
+
+    const name = String(data.get("name") || "Valued Client");
+    const email = String(data.get("email") || "");
+
+    try {
+      await submitToWeb3Forms(data, {
+        subject: `New Client Review (${formRating} Stars) - ${name}`,
+        fromName: name,
+        replyTo: email,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Review submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -1065,6 +1089,7 @@ function ReviewsPage() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-slate-900">Full Name *</label>
                       <input
+                        name="name"
                         type="text"
                         required
                         placeholder="e.g. Shannon Ruiz"
@@ -1075,6 +1100,7 @@ function ReviewsPage() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-slate-900">Email Address *</label>
                       <input
+                        name="email"
                         type="email"
                         required
                         placeholder="name@example.com"
@@ -1085,6 +1111,7 @@ function ReviewsPage() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-slate-900">Phone Number (Optional)</label>
                       <input
+                        name="phone"
                         type="tel"
                         placeholder="(201) 555-0123"
                         className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
@@ -1094,9 +1121,10 @@ function ReviewsPage() {
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-slate-900">Location (City/Town) *</label>
                       <input
+                        name="location"
                         type="text"
                         required
-                        placeholder="e.g. Woodcliff Lake, NJ"
+                        placeholder="e.g. Cliffwood, NJ"
                         className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A] focus:ring-2 focus:ring-orange-500/20"
                       />
                     </div>
@@ -1105,6 +1133,7 @@ function ReviewsPage() {
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-900">Project Type *</label>
                     <select
+                      name="projectType"
                       required
                       className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#E56E1A]"
                     >
@@ -1123,6 +1152,7 @@ function ReviewsPage() {
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-900">Your Review *</label>
                     <textarea
+                      name="review"
                       required
                       rows={4}
                       placeholder="Please share details about the craftsmanship, communication, punctuality, and overall satisfaction..."
@@ -1165,10 +1195,11 @@ function ReviewsPage() {
                   <div className="space-y-3">
                     <button
                       type="submit"
-                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={submitting}
+                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Submit Review</span>
+                      <span>{submitting ? "Submitting Review..." : "Submit Review"}</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed">

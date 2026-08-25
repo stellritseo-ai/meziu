@@ -28,6 +28,8 @@ const PROJECT_TYPES = [
   "Other Construction Service",
 ];
 
+import { submitToWeb3Forms } from "@/lib/web3forms";
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -39,12 +41,12 @@ export function Contact() {
     details?: string;
   }>({});
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setErrors({});
-    setSubmitting(true);
 
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const next: { firstName?: string; lastName?: string; phone?: string; email?: string; details?: string } = {};
 
     if (!String(data.get("firstName") ?? "").trim()) next.firstName = "First name is required.";
@@ -57,14 +59,29 @@ export function Contact() {
 
     if (Object.keys(next).length > 0) {
       setErrors(next);
-      setSubmitting(false);
       return;
     }
 
-    setTimeout(() => {
-      setSubmitting(false);
+    setSubmitting(true);
+
+    try {
+      const firstName = String(data.get("firstName") ?? "");
+      const lastName = String(data.get("lastName") ?? "");
+      const service = String(data.get("service") ?? "General Inquiry");
+
+      await submitToWeb3Forms(data, {
+        subject: `New Free Estimate Request: ${service} - ${firstName} ${lastName}`,
+        fromName: `${firstName} ${lastName}`,
+        replyTo: email,
+      });
+
       setSubmitted(true);
-    }, 600);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
