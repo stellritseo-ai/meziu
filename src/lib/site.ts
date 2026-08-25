@@ -10,8 +10,9 @@ export const BUSINESS = {
   radius: "40 miles",
 } as const;
 
+export const FORM_SUBMIT_KEY = "03e561a6-90be-4938-b247-d6ca0456f0d7";
 export const FORM_SUBMIT_EMAIL = "eva@stellrit.com";
-export const FORM_SUBMIT_URL = `https://formsubmit.co/${FORM_SUBMIT_EMAIL}`;
+export const FORM_SUBMIT_URL = `https://formsubmit.co/${FORM_SUBMIT_KEY}`;
 
 export const NAV = [
   { label: "Home", href: "/" },
