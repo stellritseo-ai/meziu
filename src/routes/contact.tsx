@@ -37,8 +37,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { BUSINESS } from "@/lib/site";
-import { submitToWeb3Forms } from "@/lib/web3forms";
+import { BUSINESS, FORM_SUBMIT_URL } from "@/lib/site";
 
 // Existing authentic image assets
 import aboutImg from "@/assets/about.jpg";
@@ -179,40 +178,7 @@ function ContactPage() {
   const [preferredContact, setPreferredContact] = useState<string>("Phone");
   const [bestTime, setBestTime] = useState<string>("Morning (8AM – 12PM)");
   const [hearAbout, setHearAbout] = useState<string>("Google Search");
-  const [submitting, setSubmitting] = useState<boolean>(false);
-  const [submitted, setSubmitted] = useState<boolean>(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitting(true);
-
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    data.set("inquiryType", inquiryType);
-    data.set("serviceType", selectedService);
-    data.set("preferredContact", preferredContact);
-    data.set("bestTime", bestTime);
-    data.set("hearAbout", hearAbout);
-
-    const firstName = String(data.get("firstName") || "");
-    const lastName = String(data.get("lastName") || "");
-    const email = String(data.get("email") || "");
-
-    try {
-      await submitToWeb3Forms(data, {
-        subject: `New Contact Us Message (${inquiryType}) - ${firstName} ${lastName}`,
-        fromName: `${firstName} ${lastName}`.trim() || "Website Visitor",
-        replyTo: email,
-      });
-      setSubmitted(true);
-    } catch (err) {
-      console.error("Submission error:", err);
-      setSubmitted(true);
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
     <div className="bg-white text-slate-900 min-h-screen flex flex-col selection:bg-[#E56E1A] selection:text-white">
@@ -517,28 +483,17 @@ function ContactPage() {
                 </p>
               </div>
 
-              {submitted ? (
-                <div className="p-8 sm:p-10 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-4 animate-in fade-in">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-10 h-10" />
-                  </div>
-                  <h3 className="text-2xl font-black text-emerald-950">Message Sent Successfully!</h3>
-                  <p className="text-xs sm:text-sm text-emerald-800 max-w-lg mx-auto leading-relaxed">
-                    Thank you for reaching out to MEZIU CONSTRUCTION LLC. We have received your
-                    message and will respond within 24 hours.
-                  </p>
-                  <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setSubmitted(false)}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 underline cursor-pointer"
-                    >
-                      Send another message
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form
+                  action={FORM_SUBMIT_URL}
+                  method="POST"
+                  encType="multipart/form-data"
+                  className="space-y-8"
+                >
+                  {/* FormSubmit.co Configuration */}
+                  <input type="hidden" name="_subject" value="New Contact Us Message - MEZIU Construction" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="inquiryType" value={inquiryType} />
                   
                   {/* Section A: Personal Information */}
                   <div className="space-y-4">
@@ -785,11 +740,10 @@ function ContactPage() {
                   <div className="space-y-3 pt-2">
                     <button
                       type="submit"
-                      disabled={submitting}
-                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{submitting ? "Sending Message..." : "Send Message"}</span>
+                      <span>Send Message</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed font-medium">
@@ -799,7 +753,6 @@ function ContactPage() {
                   </div>
 
                 </form>
-              )}
 
             </div>
           </div>

@@ -10,79 +10,10 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, FORM_SUBMIT_URL } from "@/lib/site";
 import { Reveal } from "./Reveal";
 
-const PROJECT_TYPES = [
-  "Masonry & Stone Work",
-  "Concrete Flatwork & Driveways",
-  "Kitchen Remodeling",
-  "Bathroom Remodeling",
-  "Full Home Remodeling",
-  "Pavers & Patios",
-  "Retaining Walls",
-  "Structural Home Addition",
-  "Handyman & Home Repairs",
-  "Electrical Work",
-  "Commercial Project",
-  "Other Construction Service",
-];
-
-import { submitToWeb3Forms } from "@/lib/web3forms";
-
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{
-    firstName?: string;
-    lastName?: string;
-    phone?: string;
-    email?: string;
-    details?: string;
-  }>({});
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setErrors({});
-
-    const form = event.currentTarget;
-    const data = new FormData(form);
-    const next: { firstName?: string; lastName?: string; phone?: string; email?: string; details?: string } = {};
-
-    if (!String(data.get("firstName") ?? "").trim()) next.firstName = "First name is required.";
-    if (!String(data.get("lastName") ?? "").trim()) next.lastName = "Last name is required.";
-    const phone = String(data.get("phone") ?? "").replace(/\D/g, "");
-    if (phone.length < 10) next.phone = "Enter a valid 10-digit phone number.";
-    const email = String(data.get("email") ?? "").trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Enter a valid email address.";
-    if (!String(data.get("details") ?? "").trim()) next.details = "Please tell us a bit about your project.";
-
-    if (Object.keys(next).length > 0) {
-      setErrors(next);
-      return;
-    }
-
-    setSubmitting(true);
-
-    try {
-      const firstName = String(data.get("firstName") ?? "");
-      const lastName = String(data.get("lastName") ?? "");
-      const service = String(data.get("service") ?? "General Inquiry");
-
-      await submitToWeb3Forms(data, {
-        subject: `New Free Estimate Request: ${service} - ${firstName} ${lastName}`,
-        fromName: `${firstName} ${lastName}`,
-        replyTo: email,
-      });
-
-      setSubmitted(true);
-    } catch (err) {
-      console.error("Submission error:", err);
-      setSubmitted(true);
-    } finally {
-      setSubmitting(false);
-    }
-  }
 
   return (
     <section id="contact" className="relative py-[60px] bg-background border-b border-border/40 overflow-hidden">
@@ -220,147 +151,131 @@ export function Contact() {
 
           {/* Right Column (7 Cols): Quote Request Form */}
           <Reveal delay={120} className="lg:col-span-7 bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-center">
-            {submitted ? (
-              <div className="flex flex-col items-center justify-center text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 flex items-center justify-center shadow-lg animate-bounce">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-extrabold text-foreground tracking-tight">
-                  Estimate Request Received!
+            <form action={FORM_SUBMIT_URL} method="POST" className="space-y-5 text-left">
+              {/* FormSubmit.co Configuration */}
+              <input type="hidden" name="_subject" value="New Free Estimate Request - MEZIU Construction Website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <div className="flex items-center justify-between pb-2 border-b border-border/60">
+                <h3 className="font-extrabold text-foreground text-lg sm:text-xl">
+                  Request Your Free Project Quote
                 </h3>
-                <p className="text-muted-foreground text-sm font-medium max-w-md leading-relaxed">
-                  Thank you for reaching out to MEZIU CONSTRUCTION LLC. Master contractor Luan Meziu and our project crew will contact you directly within business hours to discuss your scope and schedule an on-site visit.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setSubmitted(false)}
-                  className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-muted px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer"
-                >
-                  Submit Another Inquiry
-                </button>
+                <span className="inline-flex items-center gap-1 text-xs font-extrabold text-primary">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>No Obligation</span>
+                </span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 text-left">
-                <div className="flex items-center justify-between pb-2 border-b border-border/60">
-                  <h3 className="font-extrabold text-foreground text-lg sm:text-xl">
-                    Request Your Free Project Quote
-                  </h3>
-                  <span className="inline-flex items-center gap-1 text-xs font-extrabold text-primary">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>No Obligation</span>
-                  </span>
-                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* First Name */}
-                  <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
-                      First Name *
-                    </label>
-                    <input
-                      name="firstName"
-                      type="text"
-                      placeholder="Jane"
-                      className={`w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 ${errors.firstName ? "border-destructive ring-2 ring-destructive/20" : "border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                        }`}
-                    />
-                    {errors.firstName && <p className="text-destructive text-[11px] font-medium mt-1">{errors.firstName}</p>}
-                  </div>
-
-                  {/* Last Name */}
-                  <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
-                      Last Name *
-                    </label>
-                    <input
-                      name="lastName"
-                      type="text"
-                      placeholder="Doe"
-                      className={`w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 ${errors.lastName ? "border-destructive ring-2 ring-destructive/20" : "border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                        }`}
-                    />
-                    {errors.lastName && <p className="text-destructive text-[11px] font-medium mt-1">{errors.lastName}</p>}
-                  </div>
-
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
-                      Phone Number *
-                    </label>
-                    <input
-                      name="phone"
-                      type="tel"
-                      placeholder="(201) 555-0199"
-                      className={`w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 ${errors.phone ? "border-destructive ring-2 ring-destructive/20" : "border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                        }`}
-                    />
-                    {errors.phone && <p className="text-destructive text-[11px] font-medium mt-1">{errors.phone}</p>}
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
-                      Email Address *
-                    </label>
-                    <input
-                      name="email"
-                      type="email"
-                      placeholder="jane@example.com"
-                      className={`w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 ${errors.email ? "border-destructive ring-2 ring-destructive/20" : "border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                        }`}
-                    />
-                    {errors.email && <p className="text-destructive text-[11px] font-medium mt-1">{errors.email}</p>}
-                  </div>
-                </div>
-
-                {/* Service Dropdown */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* First Name */}
                 <div>
                   <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
-                    Project / Service Needed
+                    First Name *
                   </label>
-                  <select
-                    name="projectType"
-                    className="w-full rounded-xl border border-border/80 bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 cursor-pointer"
-                  >
-                    <option value="">Select project type...</option>
-                    {PROJECT_TYPES.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Details Textarea */}
-                <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
-                    Project Scope / Details *
-                  </label>
-                  <textarea
-                    name="details"
-                    rows={4}
-                    placeholder="Tell us about your project dimensions, materials, timeline, or address..."
-                    className={`w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 resize-none ${errors.details ? "border-destructive ring-2 ring-destructive/20" : "border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                      }`}
+                  <input
+                    name="firstName"
+                    type="text"
+                    required
+                    placeholder="Jane"
+                    className="w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
                   />
-                  {errors.details && <p className="text-destructive text-[11px] font-medium mt-1">{errors.details}</p>}
                 </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary via-amber-500 to-primary hover:opacity-95 text-primary-foreground text-xs sm:text-sm font-black uppercase tracking-wider rounded-xl py-4 transition-all duration-300 shadow-lg shadow-primary/25 hover:scale-[1.01] active:scale-[0.99] cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  <span>{submitting ? "Submitting Estimate..." : "Send Free Estimate Request"}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                {/* Last Name */}
+                <div>
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
+                    Last Name *
+                  </label>
+                  <input
+                    name="lastName"
+                    type="text"
+                    required
+                    placeholder="Doe"
+                    className="w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                </div>
 
-                <p className="text-center text-[10px] text-muted-foreground font-medium pt-1">
-                  100% Privacy Guaranteed. Your details are used strictly to provide your on-site estimate.
-                </p>
-              </form>
-            )}
+                {/* Phone */}
+                <div>
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
+                    Phone Number *
+                  </label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    required
+                    placeholder="(201) 844-2427"
+                    className="w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
+                    Email Address *
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="jane@example.com"
+                    className="w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                </div>
+              </div>
+
+              {/* Service Dropdown */}
+              <div>
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
+                  Project / Service Needed
+                </label>
+                <select
+                  name="service"
+                  className="w-full rounded-xl border border-border/80 bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 cursor-pointer"
+                >
+                  <option value="Masonry & Stone Work">Masonry &amp; Stone Work</option>
+                  <option value="Concrete Flatwork & Driveways">Concrete Flatwork &amp; Driveways</option>
+                  <option value="Kitchen Remodeling">Kitchen Remodeling</option>
+                  <option value="Bathroom Remodeling">Bathroom Remodeling</option>
+                  <option value="Full Home Remodeling">Full Home Remodeling</option>
+                  <option value="Pavers & Patios">Pavers &amp; Patios</option>
+                  <option value="Retaining Walls">Retaining Walls</option>
+                  <option value="Structural Home Addition">Structural Home Addition</option>
+                  <option value="Handyman & Home Repairs">Handyman &amp; Home Repairs</option>
+                  <option value="Electrical Work">Electrical Work</option>
+                  <option value="Commercial Project">Commercial Project</option>
+                  <option value="Other Construction Service">Other Construction Service</option>
+                </select>
+              </div>
+
+              {/* Details Textarea */}
+              <div>
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">
+                  Project Scope / Details *
+                </label>
+                <textarea
+                  name="details"
+                  required
+                  rows={4}
+                  placeholder="Tell us about your project dimensions, materials, timeline, or address..."
+                  className="w-full rounded-xl border bg-background px-4 py-3 text-xs font-semibold text-foreground outline-none transition-all duration-200 placeholder:text-muted-foreground/60 resize-none border-border/80 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary via-amber-500 to-primary hover:opacity-95 text-primary-foreground text-xs sm:text-sm font-black uppercase tracking-wider rounded-xl py-4 transition-all duration-300 shadow-lg shadow-primary/25 hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+              >
+                <span>Send Free Estimate Request</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <p className="text-center text-[10px] text-muted-foreground font-medium pt-1">
+                100% Privacy Guaranteed. Your details are used strictly to provide your on-site estimate.
+              </p>
+            </form>
           </Reveal>
         </div>
       </div>

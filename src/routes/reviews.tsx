@@ -22,8 +22,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { BUSINESS } from "@/lib/site";
-import { submitToWeb3Forms } from "@/lib/web3forms";
+import { BUSINESS, FORM_SUBMIT_URL } from "@/lib/site";
 
 import masonryImg from "@/assets/masonry.jpg";
 import paversImg from "@/assets/pavers.jpg";
@@ -468,8 +467,6 @@ function ReviewsPage() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [formRating, setFormRating] = useState<number>(5);
   const [recommend, setRecommend] = useState<boolean>(true);
-  const [submitting, setSubmitting] = useState<boolean>(false);
-  const [submitted, setSubmitted] = useState<boolean>(false);
 
   // Filtered Reviews computation
   const filteredReviews = useMemo(() => {
@@ -495,33 +492,6 @@ function ReviewsPage() {
       return true;
     });
   }, [selectedCat, searchQuery]);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitting(true);
-
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    data.set("rating", `${formRating} / 5 Stars`);
-    data.set("wouldRecommend", recommend ? "Yes" : "No");
-
-    const name = String(data.get("name") || "Valued Client");
-    const email = String(data.get("email") || "");
-
-    try {
-      await submitToWeb3Forms(data, {
-        subject: `New Client Review (${formRating} Stars) - ${name}`,
-        fromName: name,
-        replyTo: email,
-      });
-      setSubmitted(true);
-    } catch (err) {
-      console.error("Review submission error:", err);
-      setSubmitted(true);
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
     <div className="bg-white text-slate-900 min-h-screen flex flex-col selection:bg-[#E56E1A] selection:text-white">
@@ -1031,26 +1001,17 @@ function ReviewsPage() {
                 </p>
               </div>
 
-              {submitted ? (
-                <div className="p-8 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3 animate-in fade-in">
-                  <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-xl font-bold text-emerald-950">Thank You for Your Review!</h3>
-                  <p className="text-xs sm:text-sm text-emerald-800 max-w-md mx-auto">
-                    Your feedback has been received and will be reviewed and published to our client
-                    showcase. We appreciate your trust in Luan Meziu and MEZIU CONSTRUCTION LLC!
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 underline mt-2 cursor-pointer"
-                  >
-                    Submit another response
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  action={FORM_SUBMIT_URL}
+                  method="POST"
+                  className="space-y-6"
+                >
+                  {/* FormSubmit.co Configuration */}
+                  <input type="hidden" name="_subject" value="New Client Review - MEZIU Construction" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="rating" value={`${formRating} / 5 Stars`} />
+                  <input type="hidden" name="wouldRecommend" value={recommend ? "Yes" : "No"} />
                   {/* Rating Selector */}
                   <div className="p-4 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
@@ -1195,11 +1156,10 @@ function ReviewsPage() {
                   <div className="space-y-3">
                     <button
                       type="submit"
-                      disabled={submitting}
-                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full h-14 rounded-full bg-gradient-to-r from-[#E56E1A] to-[#F17B24] text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{submitting ? "Submitting Review..." : "Submit Review"}</span>
+                      <span>Submit Review</span>
                     </button>
 
                     <p className="text-[11px] text-slate-500 text-center leading-relaxed">
@@ -1208,7 +1168,6 @@ function ReviewsPage() {
                     </p>
                   </div>
                 </form>
-              )}
             </div>
           </div>
         </section>
